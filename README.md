@@ -22,5 +22,5 @@
 ---
 
 <div align="center">
-  <sub>Built for a cleaner GitHub profile with stronger personal signal.</sub>
+  <sub>Mathematics-trained builder for agentic AI systems and real-world products.</sub>
 </div>

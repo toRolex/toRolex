@@ -2,7 +2,7 @@
 
 <img width="100%" src="https://capsule-render.vercel.app/api?type=waving&height=220&color=0:11111b,45:181825,100:cba6f7&text=toRolex&fontSize=48&fontColor=cdd6f4&fontAlignY=38&desc=Agentic%20AI%20%7C%20Reasoning%20Systems%20%7C%20Multimodal%20Workflows&descAlignY=58&animation=fadeIn" alt="header" />
 
-<img src="https://readme-typing-svg.herokuapp.com?font=Fira+Code&size=24&duration=2800&pause=900&center=true&vCenter=true&width=900&color=cdd6f4&lines=Hi%2C+I%27m+Rolex.;I+build+agentic+AI+products%2C+reasoning+systems+and+multimodal+workflows.;From+math+training+to+production-grade+engineering." alt="Typing SVG" />
+<img src="https://readme-typing-svg.herokuapp.com?font=Fira+Code&size=24&duration=2800&pause=900&center=true&vCenter=true&width=900&color=cdd6f4&lines=Hi%2C+I%27m+Rolex.;Building+agentic+AI%2C+reasoning+%26+multimodal+systems.;From+math+training+to+production-grade+engineering." alt="Typing SVG" />
 
 <p>
   <img src="https://img.shields.io/badge/Focus-Agentic%20AI-cba6f7?style=for-the-badge" alt="Agentic AI" />
@@ -25,7 +25,6 @@
 
 ---
 
-## GitHub Stats
 
 <div align="center">
   <a href="https://github.com/toRolex">
@@ -35,7 +34,6 @@
   </a>
 </div>
 
-## Recent Activity
 
 <div align="center">
   <img src="https://github-readme-activity-graph.vercel.app/graph?username=toRolex&theme=catppuccin-mocha&bg_color=1e1e2e&color=cba6f7&line=89b4fa&point=f9e2af&hide_border=true&area=true" alt="activity graph" />
@@ -44,8 +42,6 @@
 ---
 
 <div align="center">
-
-## Connect
 
 <a href="#"><img src="https://img.shields.io/badge/Twitter-%231DA1F2.svg?style=for-the-badge&logo=Twitter&logoColor=white" alt="Twitter" /></a>
 <a href="#"><img src="https://img.shields.io/badge/LinkedIn-%230A66C2.svg?style=for-the-badge&logo=linkedin&logoColor=white" alt="LinkedIn" /></a>

@@ -30,7 +30,10 @@
   <a href="https://github.com/toRolex">
     <img height="180em" src="https://github-readme-stats-eight-theta.vercel.app/api?username=toRolex&show_icons=true&theme=catppuccin_mocha&hide_border=true&bg_color=1e1e2e&title_color=cba6f7&icon_color=89b4fa&text_color=cdd6f4&include_all_commits=true&count_private=true" />
     <img height="180em" src="https://github-readme-stats-eight-theta.vercel.app/api/top-langs/?username=toRolex&layout=compact&theme=catppuccin_mocha&hide_border=true&bg_color=1e1e2e&title_color=cba6f7&text_color=cdd6f4&langs_count=8" />
-    <br>
+  </a>
+</div>
+<div align="center">
+  <a href="https://github.com/toRolex">
     <img height="180em" src="https://github-readme-streak-stats.herokuapp.com/?user=toRolex&theme=catppuccin-mocha&hide_border=true&background=1e1e2e&stroke=cba6f7&ring=89b4fa&fire=fab387&currStreakLabel=cdd6f4" />
     <img height="180em" src="https://github-readme-activity-graph.vercel.app/graph?username=toRolex&theme=catppuccin-mocha&bg_color=1e1e2e&color=cba6f7&line=89b4fa&point=f9e2af&hide_border=true&area=true" alt="activity graph" />
   </a>

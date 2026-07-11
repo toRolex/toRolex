@@ -23,19 +23,18 @@
   <img src="https://raw.githubusercontent.com/toRolex/toRolex/output/github-contribution-grid-snake-dark.svg" alt="snake animation" />
 </div>
 
----
+
 
 
 <p align="center">
   <a href="https://github.com/toRolex">
     <img height="170" width="49%" src="https://github-readme-stats-eight-theta.vercel.app/api?username=toRolex&show_icons=true&theme=catppuccin_mocha&hide_border=true&bg_color=1e1e2e&title_color=cba6f7&icon_color=89b4fa&text_color=cdd6f4&include_all_commits=true&count_private=true" alt="GitHub stats" />
-  </a>
-  <a href="https://github.com/toRolex">
+  </a><a href="https://github.com/toRolex">
     <img height="170" width="49%" src="https://github-readme-stats-eight-theta.vercel.app/api/top-langs/?username=toRolex&layout=compact&theme=catppuccin_mocha&hide_border=true&bg_color=1e1e2e&title_color=cba6f7&text_color=cdd6f4&langs_count=6" alt="Top languages" />
   </a>
 </p>
 
----
+
 
 <div align="center">
 

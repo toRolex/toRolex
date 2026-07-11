@@ -28,14 +28,14 @@
 
 <div align="center">
   <a href="https://github.com/toRolex">
-    <img height="180em" src="https://github-readme-stats-eight-theta.vercel.app/api?username=toRolex&show_icons=true&theme=catppuccin_mocha&hide_border=true&bg_color=1e1e2e&title_color=cba6f7&icon_color=89b4fa&text_color=cdd6f4&include_all_commits=true&count_private=true" />
-    <img height="180em" src="https://github-readme-stats-eight-theta.vercel.app/api/top-langs/?username=toRolex&layout=compact&theme=catppuccin_mocha&hide_border=true&bg_color=1e1e2e&title_color=cba6f7&text_color=cdd6f4&langs_count=8" />
+    <img height="180em" width="56%" src="https://github-readme-stats-eight-theta.vercel.app/api?username=toRolex&show_icons=true&theme=catppuccin_mocha&hide_border=true&bg_color=1e1e2e&title_color=cba6f7&icon_color=89b4fa&text_color=cdd6f4&include_all_commits=true&count_private=true" />
+    <img height="180em" width="42%" src="https://github-readme-stats-eight-theta.vercel.app/api/top-langs/?username=toRolex&layout=compact&theme=catppuccin_mocha&hide_border=true&bg_color=1e1e2e&title_color=cba6f7&text_color=cdd6f4&langs_count=8" />
   </a>
 </div>
 <div align="center">
   <a href="https://github.com/toRolex">
-    <img height="180em" src="https://github-readme-streak-stats.herokuapp.com/?user=toRolex&theme=catppuccin-mocha&hide_border=true&background=1e1e2e&stroke=cba6f7&ring=89b4fa&fire=fab387&currStreakLabel=cdd6f4" />
-    <img height="180em" src="https://github-readme-activity-graph.vercel.app/graph?username=toRolex&theme=catppuccin-mocha&bg_color=1e1e2e&color=cba6f7&line=89b4fa&point=f9e2af&hide_border=true&area=true" alt="activity graph" />
+    <img height="200em" width="46%" src="https://github-readme-streak-stats.herokuapp.com/?user=toRolex&theme=catppuccin-mocha&hide_border=true&background=1e1e2e&stroke=cba6f7&ring=89b4fa&fire=fab387&currStreakLabel=cdd6f4" />
+    <img height="200em" width="52%" src="https://github-readme-activity-graph.vercel.app/graph?username=toRolex&theme=catppuccin-mocha&bg_color=1e1e2e&color=cba6f7&line=89b4fa&point=f9e2af&hide_border=true&area=true" alt="activity graph" />
   </a>
 </div>
 
@@ -43,10 +43,9 @@
 
 <div align="center">
 
-<a href="#"><img src="https://img.shields.io/badge/Twitter-%231DA1F2.svg?style=for-the-badge&logo=Twitter&logoColor=white" alt="Twitter" /></a>
-<a href="#"><img src="https://img.shields.io/badge/LinkedIn-%230A66C2.svg?style=for-the-badge&logo=linkedin&logoColor=white" alt="LinkedIn" /></a>
-<a href="#"><img src="https://img.shields.io/badge/Email-D14836?style=for-the-badge&logo=gmail&logoColor=white" alt="Email" /></a>
-<a href="#"><img src="https://img.shields.io/badge/Blog-%23FFA116.svg?style=for-the-badge&logo=hashnode&logoColor=white" alt="Blog" /></a>
+<a href="https://v.douyin.com/5dHlAyLV1M0/"><img src="https://img.shields.io/badge/抖音-000000?style=for-the-badge&logo=tiktok&logoColor=white" alt="抖音" /></a>
+<a href="https://xhslink.com/m/5S1wEyfGJcz"><img src="https://img.shields.io/badge/小红书-FF2442?style=for-the-badge&logo=book&logoColor=white" alt="小红书" /></a>
+<a href="mailto:torolex@163.com"><img src="https://img.shields.io/badge/邮箱-D14836?style=for-the-badge&logo=gmail&logoColor=white" alt="邮箱" /></a>
 
 <p>
   <img src="https://komarev.com/ghpvc/?username=toRolex&color=cba6f7&style=flat-square&label=Profile+Views" alt="views" />

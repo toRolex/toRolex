@@ -27,7 +27,7 @@
   <a href="https://github.com/toRolex">
     <img height="180em" src="https://github-readme-stats.vercel.app/api?username=toRolex&show_icons=true&theme=catppuccin_mocha&hide_border=true&bg_color=1e1e2e&title_color=cba6f7&icon_color=89b4fa&text_color=cdd6f4&include_all_commits=true&count_private=true" />
     <img height="180em" src="https://github-readme-stats.vercel.app/api/top-langs/?username=toRolex&layout=compact&theme=catppuccin_mocha&hide_border=true&bg_color=1e1e2e&title_color=cba6f7&text_color=cdd6f4&langs_count=8" />
-    <img height="180em" src="https://github-readme-streak-stats.vercel.app/?user=toRolex&theme=catppuccin-mocha&hide_border=true&background=1e1e2e&stroke=cba6f7&ring=89b4fa&fire=fab387&currStreakLabel=cdd6f4" />
+    <img height="180em" src="https://github-readme-streak-stats.herokuapp.com/?user=toRolex&theme=catppuccin-mocha&hide_border=true&background=1e1e2e&stroke=cba6f7&ring=89b4fa&fire=fab387&currStreakLabel=cdd6f4" />
   </a>
 </div>
 

@@ -23,13 +23,13 @@ jobs:
         run: |
           sudo chown -R $(whoami) out/
           sed -i \
-            -e 's/--c0:#161b22/--c0:#313244/' \
-            -e 's/--c1:#01311f/--c1:#45475a/' \
-            -e 's/--c2:#034525/--c2:#6c7086/' \
-            -e 's/--c3:#0f6d31/--c3:#89b4fa/' \
-            -e 's/--c4:#00c647/--c4:#cba6f7/' \
-            -e 's/--ce:#161b22/--ce:#1e1e2e/' \
-            -e 's/--cb:#1b1f230a/--cb:#3132440a/' \
+            -e 's/--c0:#ebedf0/--c0:#313244/' \
+            -e 's/--c1:#9be9a8/--c1:#45475a/' \
+            -e 's/--c2:#40c463/--c2:#6c7086/' \
+            -e 's/--c3:#30a14e/--c3:#89b4fa/' \
+            -e 's/--c4:#216e39/--c4:#cba6f7/' \
+            -e 's/--ce:#ebedf0/--ce:#1e1e2e/' \
+            -e 's/--cb:#ebedf00a/--cb:#3132440a/' \
             -e 's/purple/#cba6f7/' \
             out/github-contribution-grid-snake-dark.svg
       - uses: crazy-max/ghaction-github-pages@v4

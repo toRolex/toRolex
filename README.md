@@ -19,6 +19,10 @@
 
 </div>
 
+<div align="center">
+  <img src="https://raw.githubusercontent.com/toRolex/toRolex/output/github-contribution-grid-snake-dark.svg" alt="snake animation" />
+</div>
+
 ---
 
 ## GitHub Stats
@@ -29,6 +33,12 @@
     <img height="180em" src="https://github-readme-stats-eight-theta.vercel.app/api/top-langs/?username=toRolex&layout=compact&theme=catppuccin_mocha&hide_border=true&bg_color=1e1e2e&title_color=cba6f7&text_color=cdd6f4&langs_count=8" />
     <img height="180em" src="https://github-readme-streak-stats.herokuapp.com/?user=toRolex&theme=catppuccin-mocha&hide_border=true&background=1e1e2e&stroke=cba6f7&ring=89b4fa&fire=fab387&currStreakLabel=cdd6f4" />
   </a>
+</div>
+
+## Recent Activity
+
+<div align="center">
+  <img src="https://github-readme-activity-graph.vercel.app/graph?username=toRolex&theme=catppuccin-mocha&bg_color=1e1e2e&color=cba6f7&line=89b4fa&point=f9e2af&hide_border=true&area=true" alt="activity graph" />
 </div>
 
 ---

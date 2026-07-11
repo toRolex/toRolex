@@ -21,113 +21,22 @@
 
 ---
 
-## About Me
-
-<div align="center">
-<table>
-<tr>
-<td align="center" width="33%">
-  <p><sub>THINKING</sub></p>
-  <p>Math-trained systematic<br/>reasoning from first principles</p>
-</td>
-<td align="center" width="33%">
-  <p><sub>BUILDING</sub></p>
-  <p>Agentic AI products that<br/>reason, act, and verify</p>
-</td>
-<td align="center" width="33%">
-  <p><sub>SHIPPING</sub></p>
-  <p>From research artifacts to<br/>production-grade systems</p>
-</td>
-</tr>
-</table>
-</div>
-
----
-
 ## GitHub Stats
 
 <div align="center">
-<table><tr>
-<td><img src="https://github-readme-stats.vercel.app/api?username=toRolex&show_icons=true&theme=catppuccin_mocha&hide_border=true&bg_color=1e1e2e&title_color=cba6f7&icon_color=89b4fa&text_color=cdd6f4" alt="stats" /></td>
-<td><img src="https://github-readme-stats.vercel.app/api/top-langs?username=toRolex&layout=compact&theme=catppuccin_mocha&hide_border=true&bg_color=1e1e2e&title_color=cba6f7&text_color=cdd6f4" alt="languages" /></td>
-<td><img src="https://github-readme-streak-stats.herokuapp.com/?user=toRolex&theme=catppuccin-mocha&hide_border=true&background=1e1e2e&stroke=cba6f7&ring=89b4fa&fire=fab387&currStreakLabel=cdd6f4" alt="streak" /></td>
-</tr></table>
+  <a href="https://github.com/toRolex">
+    <img height="180em" src="https://github-readme-stats.vercel.app/api?username=toRolex&show_icons=true&theme=catppuccin_mocha&hide_border=true&bg_color=1e1e2e&title_color=cba6f7&icon_color=89b4fa&text_color=cdd6f4&include_all_commits=true&count_private=true" />
+    <img height="180em" src="https://github-readme-stats.vercel.app/api/top-langs/?username=toRolex&layout=compact&theme=catppuccin_mocha&hide_border=true&bg_color=1e1e2e&title_color=cba6f7&text_color=cdd6f4&langs_count=8" />
+    <img height="180em" src="https://github-readme-streak-stats.vercel.app/?user=toRolex&theme=catppuccin-mocha&hide_border=true&background=1e1e2e&stroke=cba6f7&ring=89b4fa&fire=fab387&currStreakLabel=cdd6f4" />
+  </a>
 </div>
 
 ## Trophy
 
 <div align="center">
-<img src="https://github-profile-trophy.vercel.app/?username=toRolex&theme=catppuccin_mocha&no-frame=true&column=4&margin-w=8&title=Stars,Followers,Commits,Repositories" alt="trophy" />
-</div>
-
-## Tech Stack
-
-<div align="center">
-
-<sub>LANGUAGES</sub>
-
-![Python](https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white)
-![TypeScript](https://img.shields.io/badge/TypeScript-3178C6?style=for-the-badge&logo=typescript&logoColor=white)
-![Rust](https://img.shields.io/badge/Rust-000000?style=for-the-badge&logo=rust&logoColor=white)
-![C++](https://img.shields.io/badge/C++-00599C?style=for-the-badge&logo=cplusplus&logoColor=white)
-
-<sub>FRAMEWORKS & TOOLS</sub>
-
-![PyTorch](https://img.shields.io/badge/PyTorch-EE4C2C?style=for-the-badge&logo=pytorch&logoColor=white)
-![React](https://img.shields.io/badge/React-61DAFB?style=for-the-badge&logo=react&logoColor=black)
-![FastAPI](https://img.shields.io/badge/FastAPI-009688?style=for-the-badge&logo=fastapi&logoColor=white)
-![Docker](https://img.shields.io/badge/Docker-2496ED?style=for-the-badge&logo=docker&logoColor=white)
-
-<sub>INFRA & DATA</sub>
-
-![PostgreSQL](https://img.shields.io/badge/PostgreSQL-4169E1?style=for-the-badge&logo=postgresql&logoColor=white)
-![Redis](https://img.shields.io/badge/Redis-DC382D?style=for-the-badge&logo=redis&logoColor=white)
-![Kubernetes](https://img.shields.io/badge/Kubernetes-326CE5?style=for-the-badge&logo=kubernetes&logoColor=white)
-
-</div>
-
-## Featured Projects
-
-<div align="center">
-<table><tr>
-<td width="50%">
-  <h4><a href="#">reasoning-engine</a> <sup>Public</sup></h4>
-  <p>Chain-of-thought reasoning + tool-use + self-verification pipeline</p>
-  <p align="left">
-    <sub>Python</sub>&nbsp;&nbsp;
-    <sub>PyTorch</sub>&nbsp;&nbsp;
-    <sub>Ray</sub>
-  </p>
-</td>
-<td width="50%">
-  <h4><a href="#">multimodal-studio</a> <sup>Public</sup></h4>
-  <p>Build and deploy multimodal pipelines end-to-end</p>
-  <p align="left">
-    <sub>TypeScript</sub>&nbsp;&nbsp;
-    <sub>React</sub>&nbsp;&nbsp;
-    <sub>FastAPI</sub>
-  </p>
-</td>
-</tr><tr>
-<td width="50%">
-  <h4><a href="#">infra-toolkit</a> <sup>Public</sup></h4>
-  <p>Production-ready ML infra recipes: training, eval, deployment</p>
-  <p align="left">
-    <sub>Python</sub>&nbsp;&nbsp;
-    <sub>Docker</sub>&nbsp;&nbsp;
-    <sub>Kubernetes</sub>
-  </p>
-</td>
-<td width="50%">
-  <h4><a href="#">agent-playground</a> <sup>Public</sup></h4>
-  <p>Interactive environment for testing and debugging AI agents</p>
-  <p align="left">
-    <sub>Python</sub>&nbsp;&nbsp;
-    <sub>TypeScript</sub>&nbsp;&nbsp;
-    <sub>WebSocket</sub>
-  </p>
-</td>
-</tr></table>
+  <a href="https://github.com/toRolex">
+    <img src="https://github-profile-trophy.vercel.app/?username=toRolex&theme=onedark&no-frame=true&column=4&margin-w=8&title=Stars,Followers,Commits,Repositories" />
+  </a>
 </div>
 
 ---

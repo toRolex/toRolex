@@ -17,11 +17,12 @@ jobs:
         with:
           github_user_name: toRolex
           outputs: |
-            dist/github-contribution-grid-snake.svg
-            dist/github-contribution-grid-snake-dark.svg
+            out/github-contribution-grid-snake.svg
+            out/github-contribution-grid-snake-dark.svg
       - name: Replace colors with Catppuccin Mocha
         run: |
-          sed \
+          sudo chown -R $(whoami) out/
+          sed -i \
             -e 's/--c0:#161b22/--c0:#313244/' \
             -e 's/--c1:#01311f/--c1:#45475a/' \
             -e 's/--c2:#034525/--c2:#6c7086/' \
@@ -30,11 +31,10 @@ jobs:
             -e 's/--ce:#161b22/--ce:#1e1e2e/' \
             -e 's/--cb:#1b1f230a/--cb:#3132440a/' \
             -e 's/purple/#cba6f7/' \
-            dist/github-contribution-grid-snake-dark.svg > dist/tmp.svg
-          mv dist/tmp.svg dist/github-contribution-grid-snake-dark.svg
+            out/github-contribution-grid-snake-dark.svg
       - uses: crazy-max/ghaction-github-pages@v4
         with:
           target_branch: output
-          build_dir: dist
+          build_dir: out
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

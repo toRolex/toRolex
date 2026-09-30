@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<!-- PROTOTYPE v2 — throwaway。回答："GitHub 原生风格、让投资人一眼看懂的主页长什么样？"
+     双击打开，底部切换 3 个 variant。全部使用 GitHub 原生元素：README 渲染产物
+     （emoji 标题、列表、table、details、blockquote、图片、shields 扁平徽章），无自定义排版花活。 -->
+<html lang="zh">
+<head>
+<meta charset="utf-8">
+<title>PROTOTYPE v2 — native GitHub profile</title>
+<style>
+  /* 只模拟 github.com 的页面外框，README 内容全部用原生语义标签 */
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{background:#0d1117;color:#c9d1d9;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif;
+    padding:0 0 140px;font-size:16px;line-height:1.6}
+  .gh-top{background:#010409;border-bottom:1px solid #30363d;padding:14px 24px;display:flex;gap:18px;align-items:center;font-size:14px;color:#8d96a0}
+  .gh-top b{color:#e6edf3}
+  .gh-top .logo{width:30px;height:30px;border-radius:50%;background:#e6edf3;color:#0d1117;display:flex;align-items:center;justify-content:center;font-weight:700}
+  .wrap{max-width:1012px;margin:24px auto;display:flex;gap:24px;padding:0 16px}
+  aside{width:296px;flex-shrink:0}
+  aside img{border-radius:50%;border:1px solid #30363d;width:100%}
+  .uname{font-size:20px;font-weight:600;color:#e6edf3;margin-top:12px}
+  .handle{color:#8d96a0;font-size:16px}
+  .bio{margin-top:12px;color:#c9d1d9}
+  .meta{margin-top:12px;font-size:14px;color:#8d96a0;display:flex;flex-direction:column;gap:6px}
+  .meta span::before{content:"· ";color:#30363d}
+  main{flex:1;min-width:0}
+  h2{font-size:16px;font-weight:600;color:#e6edf3;padding-bottom:8px;border-bottom:1px solid #21262d;margin:28px 0 16px}
+  h2:first-child{margin-top:0}
+  /* 原生 markdown 元素样式（贴近 GitHub 暗色渲染） */
+  .md h1{font-size:1.5em;color:#e6edf3;border-bottom:1px solid #21262d;padding-bottom:.3em;margin:.4em 0 .5em}
+  .md h3{font-size:1.1em;color:#e6edf3;margin:1.2em 0 .4em}
+  .md p{margin:0 0 12px}
+  .md ul{margin:0 0 12px 2em}
+  .md li{margin:3px 0}
+  .md blockquote{border-left:3px solid #30363d;color:#8d96a0;padding:0 1em;margin:0 0 12px}
+  .md table{border-collapse:collapse;margin:0 0 12px}
+  .md td,.md th{border:1px solid #30363d;padding:6px 13px}
+  .md img{max-width:100%;border-radius:6px}
+  .md hr{border:0;border-top:1px solid #21262d;margin:20px 0}
+  .md details{border:1px solid #30363d;border-radius:6px;padding:8px 16px;margin:0 0 12px;background:#0d1117}
+  .md summary{cursor:pointer;color:#e6edf3;font-weight:600}
+  .md code{background:#6e768166;padding:.2em .4em;border-radius:6px;font-size:85%;font-family:ui-monospace,SFMono-Regular,Menlo,monospace}
+  .badge{height:22px;vertical-align:middle;margin:0 4px 6px 0}
+  a{color:#2f81f7;text-decoration:none}
+  a:hover{text-decoration:underline}
+
+  .switcher{position:fixed;bottom:20px;left:50%;transform:translateX(-50%);
+    background:#161b22;border:1px solid #30363d;border-radius:12px;padding:10px;display:flex;gap:8px;z-index:10;box-shadow:0 10px 40px rgba(0,0,0,.6);max-width:94vw;flex-wrap:wrap;justify-content:center}
+  .switcher button{background:transparent;color:#8d96a0;border:1px solid transparent;border-radius:8px;padding:8px 14px;cursor:pointer;font-size:13px;font-family:inherit}
+  .switcher button:hover{color:#e6edf3;border-color:#30363d}
+  .switcher button.active{background:#21262d;color:#79c0ff;border-color:#2f81f7}
+  .statebar{position:fixed;bottom:76px;left:50%;transform:translateX(-50%);
+    background:#161b22;border:1px solid #30363d;border-radius:8px;padding:6px 14px;font-size:12px;color:#8d96a0;z-index:10;white-space:nowrap}
+  .statebar b{color:#7ee787}
+  .variant{display:none}
+  .variant.show{display:block;animation:fade .3s ease}
+  @keyframes fade{from{opacity:0}to{opacity:1}}
+</style>
+</head>
+<body>
+
+<header class="gh-top"><div class="logo">R</div><b>CallMeRol</b><span>· Profile</span><span style="margin-left:auto">PROTOTYPE v2 — GitHub 原生渲染风格</span></header>
+
+<div class="wrap">
+  <aside>
+    <img src="https://avatars.githubusercontent.com/u/330422378?v=4" alt="" onerror="this.style.background='#30363d';this.removeAttribute('src')">
+    <div class="uname">Rolex</div>
+    <div class="handle">CallMeRol · <span style="color:#7ee787">formerly @toRolex</span></div>
+    <div class="bio" id="side-bio"></div>
+    <div class="meta">
+      <span>SYSU · Master '29</span>
+      <span>torolex@163.com</span>
+    </div>
+  </aside>
+
+  <main>
+
+  <!-- ================= A：Pinned + 证据表 ================= -->
+  <section class="variant" id="vA" data-label="A · 精选仓库 + 证据表">
+    <div class="md">
+      <h1>⌘ Rolex</h1>
+      <p><b>Building the group chat where AI agents are members, not plugins.</b><br>
+      Agentic AI · Reasoning Systems · Multimodal Workflows</p>
+
+      <h3>🚀 What I'm building</h3>
+      <blockquote><b><a href="https://github.com/CallMeRol/HIVE">HIVE</a></b> — a LAN group chat where any local agent (Claude Code / Codex, via ACP) joins as a first-class member: @-able, correctable, given one goal, recycled when done.<br>
+      <i>Task-level context isolation — 有事摇人，干完回收。No shared context. No servers. Your agents, yours.</i></blockquote>
+
+      <h3>🧭 Now</h3>
+      <ul>
+        <li>🔨 Shipping <a href="https://github.com/CallMeRol/HIVE">HIVE</a> — Electron · Vue 3 · ACP · SQLite</li>
+        <li>🎓 CS Master @ Sun Yat-sen University (2029), rank 1/68</li>
+        <li>📮 torolex@163.com</li>
+      </ul>
+
+      <h3>📈 Track record</h3>
+      <table>
+        <tr><th>Project</th><th>What it proves</th><th>Status</th></tr>
+        <tr><td><a href="https://github.com/CallMeRol/HIVE">HIVE</a></td><td>0 → 1 shipped a multi-agent desktop product solo: ACP orchestration, per-task context isolation, fail-closed handover docs</td><td>🟢 v1 shipped</td></tr>
+        <tr><td>@toRolex</td><td>Built an audience & body of work in agentic AI (account wrongly suspended — under appeal, restoring)</td><td>🟡 appeal</td></tr>
+      </table>
+    </div>
+  </section>
+
+  <!-- ================= B：三行 + Pinned 主义 ================= -->
+  <section class="variant" id="vB" data-label="B · 极简三行 + details 展开">
+    <div class="md">
+      <p align="center">
+        <b>Rolex</b> · CallMeRol（旧号 @toRolex 误封申诉中）<br>
+        Agentic AI — 让本机的 agent 进群当群友，而不是当插件<br>
+        SYSU CS Master '29 · Rank 1/68
+      </p>
+
+      <h3>Current focus</h3>
+      <ul>
+        <li><a href="https://github.com/CallMeRol/HIVE"><b>HIVE</b></a> — 把任意本地 agent 拉进群当群友的群聊软件</li>
+        <li>Design: <b>摇人制</b>（task-level context isolation）— 有事摇人，干完回收</li>
+      </ul>
+
+      <details>
+        <summary>HIVE 为什么值得看（click to expand）</summary>
+        <ul>
+          <li><b>范式</b>：agent 是成员表里的平权成员——能被 @、被纠偏，干完活自动退群</li>
+          <li><b>架构</b>：Electron + Vue 3 + better-sqlite3；ACP 协议即插即用 Claude Code / Codex；纯内网、无服务器、无账号体系</li>
+          <li><b>一句话</b>：它们的 agent 是它们给你的；我们的 agent 是你自己的。</li>
+        </ul>
+      </details>
+
+      <p>
+        <img class="badge" src="https://img.shields.io/badge/focus-agentic_AI-cba6f7?style=flat-square&labelColor=1e1e2e" alt="">
+        <img class="badge" src="https://img.shields.io/badge/stack-Python_·_TypeScript_·_React-313244?style=flat-square&labelColor=181825" alt="">
+        <img class="badge" src="https://img.shields.io/badge/邮箱-torolex@163.com-D14836?style=flat-square&logo=gmail&logoColor=white" alt="">
+      </p>
+    </div>
+  </section>
+
+  <!-- ================= C：产品截图带路 ================= -->
+  <section class="variant" id="vC" data-label="C · 截图带路（show, don't tell）">
+    <div class="md">
+      <h1>Rolex <span style="color:#8d96a0;font-weight:400">· CallMeRol</span></h1>
+      <p>I build <b>agentic AI</b> systems. My thesis: <i>agents should join your group chat as equal members — not sit in a plugin drawer.</i></p>
+      <hr>
+      <p><a href="https://github.com/CallMeRol/HIVE"><img width="100%" src="https://raw.githubusercontent.com/CallMeRol/HIVE/main/docs/UI-draft/804f1f634d5c9bd73bb7f196c9cedc48.png" alt="HIVE — 人与 agent 同群的群聊界面"></a></p>
+      <p align="center"><b><a href="https://github.com/CallMeRol/HIVE">HIVE</a></b> — 人与 agent 同群。成员表里的 agent 带在线状态，右侧 Active agents 一览负担。<br>
+      <span style="color:#8d96a0">摇人制 · 任务级上下文隔离 · ACP 即插即用 · 纯内网无服务器 · Electron + Vue 3</span></p>
+      <p><a href="https://github.com/CallMeRol/HIVE"><img width="100%" src="https://raw.githubusercontent.com/CallMeRol/HIVE/main/docs/UI-draft/8a1abe5e233baf3948eda365d5f053ca.png" alt="HIVE — 多 agent 协作消息流"></a></p>
+      <p align="center" style="color:#8d96a0">Planner / Researcher / Builder 在同一会话里各自交付 —— 每个任务一个全新上下文，绝不共享。</p>
+      <hr>
+      <p align="center">
+        SYSU CS Master '29 · Rank 1/68 · 旧号 <b>@toRolex</b> 误封申诉中<br>
+        📮 <a href="mailto:torolex@163.com">torolex@163.com</a>
+      </p>
+    </div>
+  </section>
+
+  </main>
+</div>
+
+<div class="statebar" id="statebar">state: <b id="statevar">—</b> · 3 variants · 原生 markdown 语义渲染</div>
+<nav class="switcher" id="switcher"></nav>
+
+<script>
+  const variants=[...document.querySelectorAll('.variant')];
+  const nav=document.getElementById('switcher');
+  variants.forEach((v,i)=>{const b=document.createElement('button');b.textContent=v.dataset.label;b.onclick=()=>select(i);nav.appendChild(b)});
+  function select(i){variants.forEach((v,j)=>v.classList.toggle('show',i===j));
+    [...nav.children].forEach((b,j)=>b.classList.toggle('active',i===j));
+    document.getElementById('statevar').textContent=variants[i].dataset.label;
+    location.hash='v'+String.fromCharCode(65+i);}
+  const m=location.hash.match(/^#v([ABC])$/);select(m?'ABC'.indexOf(m[1]):0);
+</script>
+</body>
+</html>

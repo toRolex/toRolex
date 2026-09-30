@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>capsule-render 字体预览 — PROTOTYPE</title>
+<style>
+  :root { --bg: #11111b; --text: #cdd6f4; --accent: #cba6f7; }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { background: var(--bg); color: var(--text); font-family: system-ui; padding: 24px; }
+  h2 { color: var(--accent); margin: 32px 0 12px; font-size: 20px; }
+  .sub { color: #585b70; font-size: 13px; margin-bottom: 20px; }
+  .grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+  .card {
+    background: #1e1e2e; border: 1px solid #313244; border-radius: 10px;
+    overflow: hidden; transition: border-color 0.2s;
+  }
+  .card:hover { border-color: var(--accent); }
+  .card img { width: 100%; display: block; }
+  .card .label {
+    padding: 8px 14px; font-size: 12px; color: #a6adc8;
+    background: #181825; display: flex; justify-content: space-between; align-items: center;
+  }
+  .card .label code { color: var(--accent); font-size: 11px; }
+  .note { color: #585b70; font-size: 13px; margin-top: 24px; }
+</style>
+</head>
+<body>
+
+<h2>capsule-render 字体预览</h2>
+<p class="sub">直接请求真实 API，展示不同 <code>fontFamily</code> 参数效果。Vercel 环境 Linux 系统字体。</p>
+
+<h3 style="color:#89b4fa;margin:20px 0 12px">Serif</h3>
+<div class="grid">
+  <div class="card">
+    <img src="https://capsule-render.vercel.app/api?type=waving&height=180&color=0:11111b,45:181825,100:cba6f7&text=toRolex&fontSize=44&fontColor=cdd6f4&fontAlignY=38&desc=fontFamily:%20Georgia&descAlignY=58&animation=fadeIn&fontFamily=Georgia" loading="lazy" />
+    <div class="label">Georgia <code>fontFamily=Georgia</code></div>
+  </div>
+  <div class="card">
+    <img src="https://capsule-render.vercel.app/api?type=waving&height=180&color=0:11111b,45:181825,100:cba6f7&text=toRolex&fontSize=44&fontColor=cdd6f4&fontAlignY=38&desc=fontFamily:%20Times%20New%20Roman&descAlignY=58&animation=fadeIn&fontFamily=Times%20New%20Roman" loading="lazy" />
+    <div class="label">Times New Roman <code>fontFamily=Times%20New%20Roman</code></div>
+  </div>
+</div>
+
+<h3 style="color:#89b4fa;margin:20px 0 12px">Sans-Serif</h3>
+<div class="grid">
+  <div class="card">
+    <img src="https://capsule-render.vercel.app/api?type=waving&height=180&color=0:11111b,45:181825,100:cba6f7&text=toRolex&fontSize=44&fontColor=cdd6f4&fontAlignY=38&desc=fontFamily:%20Verdana&descAlignY=58&animation=fadeIn&fontFamily=Verdana" loading="lazy" />
+    <div class="label">Verdana <code>fontFamily=Verdana</code></div>
+  </div>
+  <div class="card">
+    <img src="https://capsule-render.vercel.app/api?type=waving&height=180&color=0:11111b,45:181825,100:cba6f7&text=toRolex&fontSize=44&fontColor=cdd6f4&fontAlignY=38&desc=fontFamily:%20Helvetica&descAlignY=58&animation=fadeIn&fontFamily=Helvetica" loading="lazy" />
+    <div class="label">Helvetica <code>fontFamily=Helvetica</code></div>
+  </div>
+  <div class="card">
+    <img src="https://capsule-render.vercel.app/api?type=waving&height=180&color=0:11111b,45:181825,100:cba6f7&text=toRolex&fontSize=44&fontColor=cdd6f4&fontAlignY=38&desc=fontFamily:%20Arial&descAlignY=58&animation=fadeIn&fontFamily=Arial" loading="lazy" />
+    <div class="label">Arial <code>fontFamily=Arial</code></div>
+  </div>
+  <div class="card">
+    <img src="https://capsule-render.vercel.app/api?type=waving&height=180&color=0:11111b,45:181825,100:cba6f7&text=toRolex&fontSize=44&fontColor=cdd6f4&fontAlignY=38&desc=fontFamily:%20Trebuchet%20MS&descAlignY=58&animation=fadeIn&fontFamily=Trebuchet%20MS" loading="lazy" />
+    <div class="label">Trebuchet MS <code>fontFamily=Trebuchet%20MS</code></div>
+  </div>
+</div>
+
+<h3 style="color:#89b4fa;margin:20px 0 12px">Monospace</h3>
+<div class="grid">
+  <div class="card">
+    <img src="https://capsule-render.vercel.app/api?type=waving&height=180&color=0:11111b,45:181825,100:cba6f7&text=toRolex&fontSize=44&fontColor=cdd6f4&fontAlignY=38&desc=fontFamily:%20Courier%20New&descAlignY=58&animation=fadeIn&fontFamily=Courier%20New" loading="lazy" />
+    <div class="label">Courier New <code>fontFamily=Courier%20New</code></div>
+  </div>
+  <div class="card">
+    <img src="https://capsule-render.vercel.app/api?type=waving&height=180&color=0:11111b,45:181825,100:cba6f7&text=toRolex&fontSize=44&fontColor=cdd6f4&fontAlignY=38&desc=fontFamily:%20monospace&descAlignY=58&animation=fadeIn&fontFamily=monospace" loading="lazy" />
+    <div class="label">monospace (系统默认) <code>fontFamily=monospace</code></div>
+  </div>
+</div>
+
+<h3 style="color:#89b4fa;margin:20px 0 12px">当前默认（无 fontFamily）</h3>
+<div class="grid">
+  <div class="card">
+    <img src="https://capsule-render.vercel.app/api?type=waving&height=180&color=0:11111b,45:181825,100:cba6f7&text=toRolex&fontSize=44&fontColor=cdd6f4&fontAlignY=38&desc=default&descAlignY=58&animation=fadeIn" loading="lazy" />
+    <div class="label">默认字体 <code>不传 fontFamily</code></div>
+  </div>
+</div>
+
+<p class="note">
+  PROTOTYPE — 所有图片均为真实 API 返回，即 GitHub README 实际效果。Google Fonts 和自定义字体不可用。
+  选中后告诉我字体名，直接改 README。
+</p>
+
+</body>
+</html>

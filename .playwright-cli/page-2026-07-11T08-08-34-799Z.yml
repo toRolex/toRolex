@@ -1,0 +1,388 @@
+- generic [ref=e2]:
+  - generic [ref=e3]:
+    - link "Skip to content" [ref=e4] [cursor=pointer]:
+      - /url: "#start-of-content"
+    - banner [ref=e6]:
+      - heading "Navigation Menu" [level=2] [ref=e7]
+      - generic [ref=e8]:
+        - link "Homepage" [ref=e10] [cursor=pointer]:
+          - /url: /
+          - img [ref=e11]
+        - generic [ref=e13]:
+          - navigation "Global" [ref=e16]:
+            - list [ref=e17]:
+              - listitem [ref=e18]:
+                - button "Platform" [ref=e20] [cursor=pointer]:
+                  - text: Platform
+                  - img [ref=e21]
+              - listitem [ref=e23]:
+                - button "Solutions" [ref=e25] [cursor=pointer]:
+                  - text: Solutions
+                  - img [ref=e26]
+              - listitem [ref=e28]:
+                - button "Resources" [ref=e30] [cursor=pointer]:
+                  - text: Resources
+                  - img [ref=e31]
+              - listitem [ref=e33]:
+                - button "Open Source" [ref=e35] [cursor=pointer]:
+                  - text: Open Source
+                  - img [ref=e36]
+              - listitem [ref=e38]:
+                - button "Enterprise" [ref=e40] [cursor=pointer]:
+                  - text: Enterprise
+                  - img [ref=e41]
+              - listitem [ref=e43]:
+                - link "Pricing" [ref=e44] [cursor=pointer]:
+                  - /url: https://github.com/pricing
+                  - generic [ref=e45]: Pricing
+          - generic [ref=e46]:
+            - button "Search or jump to…" [ref=e49] [cursor=pointer]:
+              - img [ref=e51]
+            - link "Sign in" [ref=e54] [cursor=pointer]:
+              - /url: /login?return_to=https%3A%2F%2Fgithub.com%2FtoRolex%2FtoRolex
+            - link "Sign up" [ref=e55] [cursor=pointer]:
+              - /url: /signup?ref_cta=Sign+up&ref_loc=header+logged+out&ref_page=%2F%3Cuser-name%3E%2F%3Crepo-name%3E&source=header-repo&source_repo=toRolex%2FtoRolex
+            - button "Appearance settings" [ref=e58] [cursor=pointer]:
+              - img
+  - main [ref=e62]:
+    - generic [ref=e63]:
+      - generic [ref=e64]:
+        - generic [ref=e66]:
+          - img [ref=e67]
+          - link "toRolex" [ref=e70] [cursor=pointer]:
+            - /url: /toRolex
+          - generic [ref=e71]: /
+          - strong [ref=e72]:
+            - link "toRolex" [ref=e73] [cursor=pointer]:
+              - /url: /toRolex/toRolex
+          - generic [ref=e74]: Public
+        - generic [ref=e75]:
+          - list:
+            - listitem [ref=e76]:
+              - link "You must be signed in to change notification settings" [ref=e77] [cursor=pointer]:
+                - /url: /login?return_to=%2FtoRolex%2FtoRolex
+                - img [ref=e78]
+                - text: Notifications
+            - listitem [ref=e80]:
+              - link "Fork 0" [ref=e81] [cursor=pointer]:
+                - /url: /login?return_to=%2FtoRolex%2FtoRolex
+                - img [ref=e82]
+                - text: Fork
+                - generic "0" [ref=e84]
+            - listitem [ref=e85]:
+              - link "You must be signed in to star a repository" [ref=e87] [cursor=pointer]:
+                - /url: /login?return_to=%2FtoRolex%2FtoRolex
+                - img [ref=e88]
+                - text: Star
+                - generic "0 users starred this repository" [ref=e90]: "0"
+      - navigation "Repository" [ref=e91]:
+        - list [ref=e92]:
+          - listitem [ref=e93]:
+            - link "Code" [ref=e94] [cursor=pointer]:
+              - /url: /toRolex/toRolex
+              - img [ref=e95]
+              - generic [ref=e97]: Code
+          - listitem [ref=e98]:
+            - link "Issues" [ref=e99] [cursor=pointer]:
+              - /url: /toRolex/toRolex/issues
+              - img [ref=e100]
+              - generic [ref=e103]: Issues
+          - listitem [ref=e104]:
+            - link "Pull requests" [ref=e105] [cursor=pointer]:
+              - /url: /toRolex/toRolex/pulls
+              - img [ref=e106]
+              - generic [ref=e108]: Pull requests
+          - listitem [ref=e109]:
+            - link "Actions" [ref=e110] [cursor=pointer]:
+              - /url: /toRolex/toRolex/actions
+              - img [ref=e111]
+              - generic [ref=e113]: Actions
+          - listitem [ref=e114]:
+            - link "Projects" [ref=e115] [cursor=pointer]:
+              - /url: /toRolex/toRolex/projects
+              - img [ref=e116]
+              - generic [ref=e118]: Projects
+          - listitem [ref=e119]:
+            - link "Security and quality" [ref=e120] [cursor=pointer]:
+              - /url: /toRolex/toRolex/security
+              - img [ref=e121]
+              - generic [ref=e123]: Security and quality
+          - listitem [ref=e124]:
+            - link "Insights" [ref=e125] [cursor=pointer]:
+              - /url: /toRolex/toRolex/pulse
+              - img [ref=e126]
+              - generic [ref=e128]: Insights
+    - generic [ref=e141]:
+      - heading "toRolex/toRolex" [level=1] [ref=e143]
+      - generic [ref=e144]:
+        - generic [ref=e147]:
+          - generic [ref=e148]:
+            - generic [ref=e149]:
+              - button "main branch" [ref=e151] [cursor=pointer]:
+                - generic [ref=e152]:
+                  - generic [ref=e154]:
+                    - img [ref=e156]
+                    - generic [ref=e159]: main
+                  - generic:
+                    - img
+              - generic [ref=e160]:
+                - link "2 Branches" [ref=e161] [cursor=pointer]:
+                  - /url: /toRolex/toRolex/branches
+                  - generic [ref=e162]:
+                    - generic:
+                      - img
+                    - generic [ref=e164]:
+                      - strong [ref=e165]: "2"
+                      - text: Branches
+                - link "0 Tags" [ref=e166] [cursor=pointer]:
+                  - /url: /toRolex/toRolex/tags
+                  - generic [ref=e167]:
+                    - generic:
+                      - img
+                    - generic [ref=e169]:
+                      - strong [ref=e170]: "0"
+                      - text: Tags
+            - generic [ref=e171]:
+              - generic [ref=e175]:
+                - img [ref=e177]
+                - combobox "Go to file" [ref=e179]
+              - button "Code" [ref=e180] [cursor=pointer]:
+                - generic [ref=e181]:
+                  - generic:
+                    - img
+                  - generic [ref=e182]: Code
+                  - generic:
+                    - img
+          - generic [ref=e183]:
+            - generic [ref=e184]:
+              - heading "Folders and files" [level=2] [ref=e185]
+              - table "Folders and files" [ref=e186]:
+                - rowgroup:
+                  - row "Name Last commit message Last commit date":
+                    - columnheader "Name"
+                    - columnheader "Last commit message":
+                      - generic "Last commit message"
+                    - columnheader "Last commit date":
+                      - generic "Last commit date"
+                - rowgroup [ref=e187]:
+                  - row "Latest commit toRolex commits by toRolex Merge stats cards and activity graph into single section Commit ba8aaaf · Jul 11, 20262 minutes ago History 16 Commits" [ref=e188]:
+                    - cell "Latest commit toRolex commits by toRolex Merge stats cards and activity graph into single section Commit ba8aaaf · Jul 11, 20262 minutes ago History 16 Commits" [ref=e189]:
+                      - generic [ref=e190]:
+                        - heading "Latest commit" [level=2] [ref=e191]
+                        - generic [ref=e192]:
+                          - generic [ref=e194]:
+                            - link "toRolex" [ref=e195] [cursor=pointer]:
+                              - /url: /toRolex
+                              - img "toRolex" [ref=e196]
+                            - link "commits by toRolex" [ref=e197] [cursor=pointer]:
+                              - /url: /toRolex/toRolex/commits?author=toRolex
+                              - text: toRolex
+                          - link "Merge stats cards and activity graph into single section" [ref=e201] [cursor=pointer]:
+                            - /url: /toRolex/toRolex/commit/ba8aaaf3c81bc31286d003c4fa6a04bc01c9ad82
+                        - generic [ref=e202]:
+                          - generic [ref=e204]:
+                            - link "Commit ba8aaaf" [ref=e205] [cursor=pointer]:
+                              - /url: /toRolex/toRolex/commit/ba8aaaf3c81bc31286d003c4fa6a04bc01c9ad82
+                              - text: ba8aaaf
+                            - text: ·
+                            - generic "Jul 11, 2026, 16:06 GMT+8" [ref=e206]: Jul 11, 20262 minutes ago
+                          - generic [ref=e207]:
+                            - heading "History" [level=2] [ref=e208]
+                            - link "16 Commits" [ref=e209] [cursor=pointer]:
+                              - /url: /toRolex/toRolex/commits/main/
+                              - generic [ref=e210]:
+                                - generic:
+                                  - img
+                                - generic [ref=e211]: 16 Commits
+                  - row ".github/workflows, (Directory) Fix color replacements for light variant snake SVG. Jul 11, 20268 minutes ago" [ref=e212]:
+                    - cell ".github/workflows, (Directory)" [ref=e213]:
+                      - generic [ref=e214]:
+                        - img [ref=e215]
+                        - link ".github/workflows, (Directory)" [ref=e220] [cursor=pointer]:
+                          - /url: /toRolex/toRolex/tree/main/.github/workflows
+                          - text: .github/workflows
+                    - cell "Fix color replacements for light variant snake SVG." [ref=e221]:
+                      - link "Fix color replacements for light variant snake SVG." [ref=e224] [cursor=pointer]:
+                        - /url: /toRolex/toRolex/commit/ce714a2cfc82db7005ce4f05e2bd5912f65c95d6
+                    - cell "Jul 11, 20268 minutes ago" [ref=e225]:
+                      - generic [ref=e226]: Jul 11, 20268 minutes ago
+                  - row "README.md, (File) Merge stats cards and activity graph into single section Jul 11, 20262 minutes ago" [ref=e227]:
+                    - cell "README.md, (File)" [ref=e228]:
+                      - generic [ref=e229]:
+                        - img [ref=e230]
+                        - link "README.md, (File)" [ref=e235] [cursor=pointer]:
+                          - /url: /toRolex/toRolex/blob/main/README.md
+                          - text: README.md
+                    - cell "Merge stats cards and activity graph into single section" [ref=e236]:
+                      - link "Merge stats cards and activity graph into single section" [ref=e239] [cursor=pointer]:
+                        - /url: /toRolex/toRolex/commit/ba8aaaf3c81bc31286d003c4fa6a04bc01c9ad82
+                    - cell "Jul 11, 20262 minutes ago" [ref=e240]:
+                      - generic [ref=e241]: Jul 11, 20262 minutes ago
+            - generic [ref=e243]:
+              - generic [ref=e244]:
+                - heading "Repository files navigation" [level=2] [ref=e245]
+                - navigation "Repository files" [ref=e246]:
+                  - list [ref=e247]:
+                    - listitem [ref=e248]:
+                      - link "README" [ref=e249] [cursor=pointer]:
+                        - /url: "#"
+                        - img [ref=e251]
+                        - generic [ref=e253]: README
+              - article [ref=e255]:
+                - generic [ref=e256]:
+                  - link "header" [ref=e257] [cursor=pointer]:
+                    - /url: https://camo.githubusercontent.com/dcff5d4aa4f994ab4c0271591419ef4217fc9b0ebccb1fe3fc9503208547eb47/68747470733a2f2f63617073756c652d72656e6465722e76657263656c2e6170702f6170693f747970653d776176696e67266865696768743d32323026636f6c6f723d303a3131313131622c34353a3138313832352c3130303a63626136663726746578743d746f526f6c657826666f6e7453697a653d343826666f6e74436f6c6f723d63646436663426666f6e74416c69676e593d333826646573633d4167656e7469632532304149253230253743253230526561736f6e696e6725323053797374656d732532302537432532304d756c74696d6f64616c253230576f726b666c6f77732664657363416c69676e593d353826616e696d6174696f6e3d66616465496e
+                    - img "header" [ref=e258]
+                  - link "Typing SVG" [ref=e259] [cursor=pointer]:
+                    - /url: https://camo.githubusercontent.com/01c3698ba96ab426216d3dcc81c1823452617ba58c2bd240d9899f3b75c7b3d7/68747470733a2f2f726561646d652d747970696e672d7376672e6865726f6b756170702e636f6d3f666f6e743d466972612b436f64652673697a653d3234266475726174696f6e3d323830302670617573653d3930302663656e7465723d74727565267643656e7465723d747275652677696474683d39303026636f6c6f723d636464366634266c696e65733d48692532432b492532376d2b526f6c65782e3b4275696c64696e672b6167656e7469632b41492532432b726561736f6e696e672b2532362b6d756c74696d6f64616c2b73797374656d732e3b46726f6d2b6d6174682b747261696e696e672b746f2b70726f64756374696f6e2d67726164652b656e67696e656572696e672e
+                    - img "Typing SVG" [ref=e260]
+                  - paragraph [ref=e261]:
+                    - link "Agentic AI" [ref=e262] [cursor=pointer]:
+                      - /url: https://camo.githubusercontent.com/d7a9938302c55868ed142910bae1df8c0f4703bc3c2e5f426233c4565de762fc/68747470733a2f2f696d672e736869656c64732e696f2f62616467652f466f6375732d4167656e74696325323041492d6362613666373f7374796c653d666f722d7468652d6261646765
+                      - img "Agentic AI" [ref=e263]
+                    - link "Reasoning Systems" [ref=e264] [cursor=pointer]:
+                      - /url: https://camo.githubusercontent.com/f152bf3818068671656b2ab25d2eb334b9a390acea54e9b7d9c8fa4e6e8f0aa7/68747470733a2f2f696d672e736869656c64732e696f2f62616467652f466f6375732d526561736f6e696e6725323053797374656d732d3839623466613f7374796c653d666f722d7468652d6261646765
+                      - img "Reasoning Systems" [ref=e265]
+                    - link "Multimodal Workflows" [ref=e266] [cursor=pointer]:
+                      - /url: https://camo.githubusercontent.com/d58575b84f164893f1ee0979f6b03ab74b370a654c48e2bb710936b51dd89977/68747470733a2f2f696d672e736869656c64732e696f2f62616467652f466f6375732d4d756c74696d6f64616c253230576f726b666c6f77732d3934653264353f7374796c653d666f722d7468652d6261646765
+                      - img "Multimodal Workflows" [ref=e267]
+                  - paragraph [ref=e268]:
+                    - link "Rank 1/68" [ref=e269] [cursor=pointer]:
+                      - /url: https://camo.githubusercontent.com/0aaa8e4fe3d2a02135c3096af0f246bf04997e2551de57714d121066e05555c1/68747470733a2f2f696d672e736869656c64732e696f2f62616467652f52616e6b2d3125324636382d6639653261663f7374796c653d666c61742d737175617265266c6162656c436f6c6f723d316531653265
+                      - img "Rank 1/68" [ref=e270]
+                    - link "SYSU 2029" [ref=e271] [cursor=pointer]:
+                      - /url: https://camo.githubusercontent.com/09abb4f84c304d528c2d381e98bf21c54ec3ee2b46a6d5bedd9506a8453d07e4/68747470733a2f2f696d672e736869656c64732e696f2f62616467652f4d61737465722d53595355253230323032392d3839623466613f7374796c653d666c61742d737175617265266c6162656c436f6c6f723d316531653265
+                      - img "SYSU 2029" [ref=e272]
+                    - link "Stack" [ref=e273] [cursor=pointer]:
+                      - /url: https://camo.githubusercontent.com/606f69aacba790a243b4b74f58c77180ade4767ddea24defd1d24d83f20a760b/68747470733a2f2f696d672e736869656c64732e696f2f62616467652f537461636b2d507974686f6e2532302537432532305479706553637269707425323025374325323052656163742d3331333234343f7374796c653d666c61742d737175617265266c6162656c436f6c6f723d313831383235
+                      - img "Stack" [ref=e274]
+                    - link "Interest" [ref=e275] [cursor=pointer]:
+                      - /url: https://camo.githubusercontent.com/c6f0bb4cbb79117a0acfd33231d665b01a45117ca53c8966ec72c7d3bf12452e/68747470733a2f2f696d672e736869656c64732e696f2f62616467652f496e7465726573742d4167656e7473253230253743253230526561736f6e696e6725323025374325323053797374656d732d6635633265373f7374796c653d666c61742d737175617265266c6162656c436f6c6f723d316531653265
+                      - img "Interest" [ref=e276]
+                - link "snake animation" [ref=e278] [cursor=pointer]:
+                  - /url: https://raw.githubusercontent.com/toRolex/toRolex/output/github-contribution-grid-snake-dark.svg
+                  - img "snake animation" [ref=e279]
+                - separator [ref=e280]
+                - generic [ref=e281]:
+                  - link [ref=e282] [cursor=pointer]:
+                    - /url: https://github.com/toRolex
+                    - img [ref=e283]
+                    - img [ref=e284]
+                    - img [ref=e285]
+                  - link "activity graph" [ref=e286] [cursor=pointer]:
+                    - /url: https://camo.githubusercontent.com/d6ee6b141df1fd208ea52bac5c159433ef0e97f0ec9bcddda594faf9ac10d06e/68747470733a2f2f6769746875622d726561646d652d61637469766974792d67726170682e76657263656c2e6170702f67726170683f757365726e616d653d746f526f6c6578267468656d653d6361747070756363696e2d6d6f6368612662675f636f6c6f723d31653165326526636f6c6f723d636261366637266c696e653d38396234666126706f696e743d66396532616626686964655f626f726465723d7472756526617265613d74727565
+                    - img "activity graph" [ref=e287]
+                - separator [ref=e288]
+                - generic [ref=e289]:
+                  - paragraph [ref=e290]:
+                    - link "Twitter" [ref=e291] [cursor=pointer]:
+                      - /url: "#"
+                      - img "Twitter" [ref=e292]
+                    - link "LinkedIn" [ref=e293] [cursor=pointer]:
+                      - /url: "#"
+                      - img "LinkedIn" [ref=e294]
+                    - link "Email" [ref=e295] [cursor=pointer]:
+                      - /url: "#"
+                      - img "Email" [ref=e296]
+                    - link "Blog" [ref=e297] [cursor=pointer]:
+                      - /url: "#"
+                      - img "Blog" [ref=e298]
+                  - paragraph [ref=e299]:
+                    - link "views" [ref=e300] [cursor=pointer]:
+                      - /url: https://camo.githubusercontent.com/5300da60fb7f909985ec8cce9b8b025fea003c6880cf2bf46de344a3fc4a878c/68747470733a2f2f6b6f6d617265762e636f6d2f67687076632f3f757365726e616d653d746f526f6c657826636f6c6f723d636261366637267374796c653d666c61742d737175617265266c6162656c3d50726f66696c652b5669657773
+                      - img "views" [ref=e301]
+        - generic [ref=e305]:
+          - generic [ref=e308]:
+            - heading "About" [level=2] [ref=e309]
+            - paragraph [ref=e310]:
+              - text: GitHub profile README for
+              - link "@toRolex" [ref=e311] [cursor=pointer]:
+                - /url: https://github.com/toRolex
+            - heading "Resources" [level=3] [ref=e312]
+            - link "Readme" [ref=e314] [cursor=pointer]:
+              - /url: "#readme-ov-file"
+              - img [ref=e315]
+              - text: Readme
+            - link "Activity" [ref=e318] [cursor=pointer]:
+              - /url: /toRolex/toRolex/activity
+              - img [ref=e319]
+              - text: Activity
+            - heading "Stars" [level=3] [ref=e321]
+            - generic [ref=e323]:
+              - img [ref=e324]
+              - strong [ref=e326]: "0"
+              - text: stars
+            - heading "Watchers" [level=3] [ref=e327]
+            - generic [ref=e329]:
+              - img [ref=e330]
+              - strong [ref=e332]: "0"
+              - text: watching
+            - heading "Forks" [level=3] [ref=e333]
+            - link "0 forks" [ref=e335] [cursor=pointer]:
+              - /url: /toRolex/toRolex/forks
+              - img [ref=e336]
+              - strong [ref=e338]: "0"
+              - text: forks
+            - link "Report repository" [ref=e340] [cursor=pointer]:
+              - /url: /contact/report-content?content_url=https%3A%2F%2Fgithub.com%2FtoRolex%2FtoRolex&report=toRolex+%28user%29
+          - generic [ref=e342]:
+            - heading "Releases" [level=2] [ref=e343]:
+              - link "Releases" [ref=e344] [cursor=pointer]:
+                - /url: /toRolex/toRolex/releases
+            - generic [ref=e345]: No releases published
+          - generic [ref=e347]:
+            - heading "Packages" [level=2] [ref=e348]:
+              - link "Packages" [ref=e349] [cursor=pointer]:
+                - /url: /users/toRolex/packages?repo_name=toRolex
+            - generic [ref=e350]: No packages published
+          - generic [ref=e352]:
+            - heading "Contributors 1" [level=2] [ref=e353]:
+              - link "Contributors 1" [ref=e354] [cursor=pointer]:
+                - /url: /toRolex/toRolex/graphs/contributors
+                - text: Contributors
+                - generic "1" [ref=e355]
+            - list [ref=e356]:
+              - listitem [ref=e357]:
+                - link "@toRolex" [ref=e358] [cursor=pointer]:
+                  - /url: https://github.com/toRolex
+                  - img "@toRolex" [ref=e359]
+                - link "toRolex Rolex" [ref=e361] [cursor=pointer]:
+                  - /url: https://github.com/toRolex
+                  - strong [ref=e362]: toRolex
+                  - text: Rolex
+  - contentinfo [ref=e364]:
+    - heading "Footer" [level=2] [ref=e365]
+    - generic [ref=e366]:
+      - generic [ref=e367]:
+        - link "GitHub Homepage" [ref=e368] [cursor=pointer]:
+          - /url: https://github.com
+          - img [ref=e369]
+        - generic [ref=e371]: © 2026 GitHub, Inc.
+      - navigation "Footer" [ref=e372]:
+        - heading "Footer navigation" [level=3] [ref=e373]
+        - list "Footer navigation" [ref=e374]:
+          - listitem [ref=e375]:
+            - link "Terms" [ref=e376] [cursor=pointer]:
+              - /url: https://docs.github.com/site-policy/github-terms/github-terms-of-service
+          - listitem [ref=e377]:
+            - link "Privacy" [ref=e378] [cursor=pointer]:
+              - /url: https://docs.github.com/site-policy/privacy-policies/github-privacy-statement
+          - listitem [ref=e379]:
+            - link "Security" [ref=e380] [cursor=pointer]:
+              - /url: https://github.com/security
+          - listitem [ref=e381]:
+            - link "Status" [ref=e382] [cursor=pointer]:
+              - /url: https://www.githubstatus.com/
+          - listitem [ref=e383]:
+            - link "Community" [ref=e384] [cursor=pointer]:
+              - /url: https://github.community/
+          - listitem [ref=e385]:
+            - link "Docs" [ref=e386] [cursor=pointer]:
+              - /url: https://docs.github.com/
+          - listitem [ref=e387]:
+            - link "Contact" [ref=e388] [cursor=pointer]:
+              - /url: https://support.github.com?tags=dotcom-footer
+          - listitem [ref=e389]:
+            - button "Manage cookies" [ref=e391] [cursor=pointer]
+          - listitem [ref=e392]:
+            - button "Do not share my personal information" [ref=e394] [cursor=pointer]

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<!-- V2 卡片 1:1 还原，用于截图成 GitHub hero 图。窗口 1200x900，截图卡片区域。 -->
+<html>
+<head>
+<meta charset="utf-8">
+<style>
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{background:#f6f8fa;display:flex;justify-content:center;padding:60px 0;
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif}
+  .card{width:880px;border:1.5px solid #111;background:#fff;padding:56px 64px 48px;position:relative;
+    box-shadow:9px 9px 0 #d9f0f9}
+  .corner-spark{position:absolute;top:-78px;right:-72px;width:200px;z-index:2}
+  .corner-dot{position:absolute;width:26px;height:26px;background:#111;border-radius:50%;bottom:32px;right:38px}
+  .kicker{display:flex;justify-content:space-between;font-size:12.5px;letter-spacing:3px;text-transform:uppercase;color:#555;
+    border-bottom:1px solid #111;padding-bottom:13px;margin-bottom:34px}
+  .title{font-size:58px;line-height:1.12;font-weight:700;letter-spacing:-1px;color:#111}
+  .title .circle-wrap{display:inline-block;position:relative}
+  .title img{width:150px;height:150px;border-radius:50%;object-fit:cover;vertical-align:-42px;margin:0 8px}
+  .hand{font-family:"Snell Roundhand","Brush Script MT",cursive;font-weight:400;color:#2ea3d6;font-size:62px}
+  .lede{margin:30px 0 6px;font-size:17px;max-width:600px;color:#333;line-height:1.7}
+  .list{margin:30px 0 0;list-style:none}
+  .list li{display:flex;gap:16px;padding:12px 0;border-bottom:1px solid #e8f4fa;font-size:15.5px;align-items:baseline}
+  .list .no{font-size:12px;color:#8ec9e8;font-weight:700;letter-spacing:1px;min-width:28px}
+  .list b{min-width:230px;color:#111}
+  .list span{color:#777;font-size:14px}
+  .sig{margin-top:36px;display:flex;justify-content:space-between;align-items:center;font-size:13.5px;color:#666}
+  .sig .name{font-family:"Snell Roundhand","Brush Script MT",cursive;font-size:38px;color:#111}
+  .star{position:absolute;bottom:-46px;left:60px;width:110px;z-index:2}
+</style>
+</head>
+<body>
+<div class="card">
+  <svg class="corner-spark" viewBox="0 0 200 200">
+    <path d="M100 0 C105 55 115 85 200 100 C115 115 105 145 100 200 C95 145 85 115 0 100 C85 85 95 55 100 0 Z" fill="#e3f4fb" stroke="#111" stroke-width="0.6"/>
+    <path d="M100 8 C104 58 112 88 192 100 C112 112 104 142 100 192 C96 142 88 112 8 100 C88 88 96 58 100 8 Z" fill="#d2ecf8" opacity="0.6"/>
+  </svg>
+  <svg class="star" viewBox="0 0 200 200">
+    <g transform="rotate(30 100 100)"><path d="M100 0 C105 55 115 85 200 100 C115 115 105 145 100 200 C95 145 85 115 0 100 C85 85 95 55 100 0 Z" fill="#eaf7fd" stroke="#111" stroke-width="0.5"/></g>
+    <g transform="rotate(-30 100 100)"><path d="M100 0 C105 55 115 85 200 100 C115 115 105 145 100 200 C95 145 85 115 0 100 C85 85 95 55 100 0 Z" fill="#eaf7fd" stroke="#111" stroke-width="0.5"/></g>
+  </svg>
+  <div class="corner-dot"></div>
+
+  <div class="kicker"><span>CallMeRol · formerly @toRolex (appeal in progress)</span><span>est. 2026</span></div>
+  <div class="title">
+    I make <span class="circle-wrap"><img src="rolex-photo.png"></span> agents<br>
+    that <span class="hand">actually ship.</span>
+  </div>
+  <p class="lede">数学训练出身，做 production-grade AI engineering：科研 agent 系统、coding-agent 工具、跑在生产上的内容流水线。</p>
+  <div class="sig">
+    <span>Python · TypeScript · React — SYSU CS Master '29 · Rank 1/68</span>
+    <span class="name">Rolex</span>
+  </div>
+</div>
+</body>
+</html>

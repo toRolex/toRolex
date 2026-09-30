@@ -1,0 +1,2 @@
+[   10411ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_CLOSED @ https://github-readme-streak-stats.herokuapp.com/?user=toRolex&theme=catppuccin-mocha&hide_border=true&background=1e1e2e&stroke=cba6f7&ring=89b4fa&fire=fab387&currStreakLabel=cdd6f4:0
+[   10415ms] [ERROR] Failed to load resource: the server responded with a status of 404 (File not found) @ http://localhost:8766/favicon.ico:0

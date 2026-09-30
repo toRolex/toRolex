@@ -1,0 +1,480 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>README 字体预览 — PROTOTYPE</title>
+<style>
+  /* Anthropic 官方定制字体 — 本地优先，CDN fallback */
+  @font-face {
+    font-family: 'Anthropic Serif';
+    src: local('Anthropic Serif Web'),
+         url('https://cdn.prod.website-files.com/67ce28cfec624e2b733f8a52/69971a1551eb6cda0d656e8a_AnthropicSerif-Roman-Web.woff2') format('woff2');
+    font-weight: 300 800;
+    font-style: normal;
+  }
+  @font-face {
+    font-family: 'Anthropic Serif';
+    src: local('Anthropic Serif Web'),
+         url('https://cdn.prod.website-files.com/67ce28cfec624e2b733f8a52/69971a15a9fb8c1107a3570e_AnthropicSerif-Italic-Web.woff2') format('woff2');
+    font-weight: 300 800;
+    font-style: italic;
+  }
+  @font-face {
+    font-family: 'Anthropic Sans';
+    src: local('Anthropic Sans Web'),
+         url('https://cdn.prod.website-files.com/67ce28cfec624e2b733f8a52/69971a00a3295036497e1a28_AnthropicSans-Roman-Web.woff2') format('woff2');
+    font-weight: 300 800;
+    font-style: normal;
+  }
+  @font-face {
+    font-family: 'Anthropic Sans';
+    src: local('Anthropic Sans Web'),
+         url('https://cdn.prod.website-files.com/67ce28cfec624e2b733f8a52/69971a016067bf14b9b8f48d_AnthropicSans-Italic-Web.woff2') format('woff2');
+    font-weight: 300 800;
+    font-style: italic;
+  }
+  @font-face {
+    font-family: 'Anthropic Mono';
+    src: local('Anthropic Mono Web'),
+         url('https://cdn.prod.website-files.com/67ce28cfec624e2b733f8a52/69971a2e55d24d61bc045b1a_AnthropicMono-Roman-Web.woff2') format('woff2');
+    font-weight: 300 800;
+    font-style: normal;
+  }
+  @font-face {
+    font-family: 'Anthropic Mono';
+    src: local('Anthropic Mono Web'),
+         url('https://cdn.prod.website-files.com/67ce28cfec624e2b733f8a52/69971a2eb93743112c30fe9c_AnthropicMono-Italic-Web.woff2') format('woff2');
+    font-weight: 300 800;
+    font-style: italic;
+  }
+</style>
+<link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;700&family=JetBrains+Mono:wght@400;500;700&family=Source+Code+Pro:wght@400;500;700&family=IBM+Plex+Mono:wght@400;500;700&family=Poppins:wght@400;500;600;700&family=Inter:wght@400;500;600;700&family=Nunito:wght@400;500;600;700&family=Space+Mono:wght@400;700&family=Inconsolata:wght@400;500;700&family=Roboto+Mono:wght@400;500;700&family=Lora:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Merriweather:wght@0,300;0,400;0,700;1,300;1,400&family=Crimson+Pro:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+<style>
+  :root { --bg: #1e1e2e; --surface: #181825; --text: #cdd6f4; --accent: #cba6f7; --blue: #89b4fa; }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { background: #11111b; color: var(--text); font-family: system-ui; padding: 32px; }
+  h2 { color: var(--accent); margin: 40px 0 16px; font-size: 22px; border-bottom: 1px solid #313244; padding-bottom: 8px; }
+  .sub { color: #585b70; margin-bottom: 24px; font-size: 13px; }
+  .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+  .grid-3 { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 16px; }
+  .grid-5 { display: grid; grid-template-columns: repeat(5, 1fr); gap: 12px; }
+
+  .card {
+    background: var(--bg); border: 1px solid #313244; border-radius: 10px;
+    padding: 20px 18px; display: flex; flex-direction: column; align-items: center; gap: 12px;
+    transition: border-color 0.2s;
+  }
+  .card:hover { border-color: var(--accent); }
+  .card.current { border-color: var(--accent); box-shadow: 0 0 0 1px var(--accent); }
+
+  .label {
+    font-size: 10px; color: #585b70; text-transform: uppercase; letter-spacing: 1.5px;
+    text-align: center;
+  }
+  .label .tag {
+    display: inline-block; background: #313244; color: #a6adc8; font-size: 9px;
+    padding: 1px 6px; border-radius: 3px; margin-left: 4px; vertical-align: middle;
+  }
+  .label .tag.mono { background: #313244; }
+  .label .tag.sans { background: #45475a; color: var(--blue); }
+
+  .typing-line {
+    font-size: 17px; line-height: 1.5; text-align: center; overflow: hidden; white-space: nowrap;
+    border-right: 2px solid var(--accent); padding-right: 4px;
+    animation: blink 0.8s step-end infinite;
+  }
+  @keyframes blink { 50% { border-color: transparent; } }
+  .typing-sub { font-size: 13px; color: #a6adc8; text-align: center; }
+
+  .compare-table { width: 100%; border-collapse: collapse; margin-top: 16px; }
+  .compare-table th, .compare-table td {
+    padding: 10px 14px; text-align: left; border-bottom: 1px solid #313244;
+  }
+  .compare-table th { color: var(--accent); font-size: 11px; text-transform: uppercase; letter-spacing: 1px; }
+  .compare-table td { font-size: 13px; vertical-align: middle; }
+  .compare-table tr:hover { background: rgba(203, 166, 247, 0.05); }
+
+  .note { font-size: 12px; color: #585b70; margin-top: 6px; }
+  .note a { color: var(--blue); }
+
+  /* font assignments — class per font */
+  .f-fira    .typing-line, .f-fira    .typing-sub { font-family: 'Fira Code', monospace; }
+  .f-jet     .typing-line, .f-jet     .typing-sub { font-family: 'JetBrains Mono', monospace; }
+  .f-source  .typing-line, .f-source  .typing-sub { font-family: 'Source Code Pro', monospace; }
+  .f-ibm     .typing-line, .f-ibm     .typing-sub { font-family: 'IBM Plex Mono', monospace; }
+  .f-poppins .typing-line, .f-poppins .typing-sub { font-family: 'Poppins', sans-serif; }
+  .f-avenir     .typing-line, .f-avenir     .typing-sub { font-family: 'Avenir Next', 'Avenir', system-ui, sans-serif; }
+  .f-helvetica  .typing-line, .f-helvetica  .typing-sub { font-family: 'Helvetica Neue', 'Helvetica', system-ui, sans-serif; }
+  .f-inter   .typing-line, .f-inter   .typing-sub { font-family: 'Inter', sans-serif; }
+  .f-nunito  .typing-line, .f-nunito  .typing-sub { font-family: 'Nunito', sans-serif; }
+  .f-space   .typing-line, .f-space   .typing-sub { font-family: 'Space Mono', monospace; }
+  .f-incon   .typing-line, .f-incon   .typing-sub { font-family: 'Inconsolata', monospace; }
+  .f-roboto  .typing-line, .f-roboto  .typing-sub { font-family: 'Roboto Mono', monospace; }
+  .f-lora        .typing-line, .f-lora        .typing-sub { font-family: 'Lora', serif; }
+  .f-anthro-serif  .typing-line, .f-anthro-serif  .typing-sub { font-family: 'Anthropic Serif', serif; }
+  .f-anthro-sans   .typing-line, .f-anthro-sans   .typing-sub { font-family: 'Anthropic Sans', sans-serif; }
+  .f-anthro-mono   .typing-line, .f-anthro-mono   .typing-sub { font-family: 'Anthropic Mono', monospace; }
+  .f-playfair    .typing-line, .f-playfair    .typing-sub { font-family: 'Playfair Display', serif; }
+  .f-merriweather .typing-line, .f-merriweather .typing-sub { font-family: 'Merriweather', serif; }
+  .f-crimson     .typing-line, .f-crimson     .typing-sub { font-family: 'Crimson Pro', serif; }
+  .f-libre       .typing-line, .f-libre       .typing-sub { font-family: 'Libre Baskerville', serif; }
+</style>
+</head>
+<body>
+
+<h2>🔤 Anthropic 官方字体家族 — 3 款</h2>
+<p class="sub">从 Anthropic 官网 Webflow CDN 提取的真实字体文件（@font-face 加载）。<b>仅本地预览，readme-typing-svg 不支持</b>。</p>
+
+<div class="grid-3">
+  <div class="card f-anthro-sans">
+    <div class="label">Anthropic Sans <span class="tag" style="background:#cba6f7;color:#1e1e2e">官方</span></div>
+    <div class="typing-line">Hi, I'm Rolex.</div>
+    <div class="typing-sub">Building agentic AI, reasoning & multimodal systems.</div>
+  </div>
+
+  <div class="card f-anthro-serif">
+    <div class="label">Anthropic Serif <span class="tag" style="background:#cba6f7;color:#1e1e2e">官方</span></div>
+    <div class="typing-line">Hi, I'm Rolex.</div>
+    <div class="typing-sub">Building agentic AI, reasoning & multimodal systems.</div>
+  </div>
+
+  <div class="card f-anthro-mono">
+    <div class="label">Anthropic Mono <span class="tag" style="background:#cba6f7;color:#1e1e2e">官方</span></div>
+    <div class="typing-line">Hi, I'm Rolex.</div>
+    <div class="typing-sub">Building agentic AI, reasoning & multimodal systems.</div>
+  </div>
+</div>
+
+<h2>🔤 等宽字体 (Monospace) — 7 款</h2>
+<p class="sub">GitHub 上最经典、最常用的等宽编码字体。readme-typing-svg 原生支持。</p>
+
+<div class="grid-2">
+  <div class="card f-fira current">
+    <div class="label">Fira Code <span class="tag mono">当前</span></div>
+    <div class="typing-line">Hi, I'm Rolex.</div>
+    <div class="typing-sub">Building agentic AI, reasoning & multimodal systems.</div>
+  </div>
+
+  <div class="card f-jet">
+    <div class="label">JetBrains Mono <span class="tag mono">mono</span></div>
+    <div class="typing-line">Hi, I'm Rolex.</div>
+    <div class="typing-sub">Building agentic AI, reasoning & multimodal systems.</div>
+  </div>
+
+  <div class="card f-source">
+    <div class="label">Source Code Pro <span class="tag mono">mono</span></div>
+    <div class="typing-line">Hi, I'm Rolex.</div>
+    <div class="typing-sub">Building agentic AI, reasoning & multimodal systems.</div>
+  </div>
+
+  <div class="card f-ibm">
+    <div class="label">IBM Plex Mono <span class="tag mono">mono</span></div>
+    <div class="typing-line">Hi, I'm Rolex.</div>
+    <div class="typing-sub">Building agentic AI, reasoning & multimodal systems.</div>
+  </div>
+
+  <div class="card f-space">
+    <div class="label">Space Mono <span class="tag mono">mono</span></div>
+    <div class="typing-line">Hi, I'm Rolex.</div>
+    <div class="typing-sub">Building agentic AI, reasoning & multimodal systems.</div>
+  </div>
+
+  <div class="card f-incon">
+    <div class="label">Inconsolata <span class="tag mono">mono</span></div>
+    <div class="typing-line">Hi, I'm Rolex.</div>
+    <div class="typing-sub">Building agentic AI, reasoning & multimodal systems.</div>
+  </div>
+
+  <div class="card f-roboto">
+    <div class="label">Roboto Mono <span class="tag mono">mono</span></div>
+    <div class="typing-line">Hi, I'm Rolex.</div>
+    <div class="typing-sub">Building agentic AI, reasoning & multimodal systems.</div>
+  </div>
+</div>
+
+<h2>🔤 无衬线字体 (Sans-Serif) — 5 款</h2>
+<p class="sub">Poppins (Anthropic 官方) + Avenir Next / Helvetica Now (macOS 系统字体，仅本页预览可用，readme-typing-svg <b>不支持</b>) + 免费替代方案。</p>
+
+<div class="grid-3">
+  <div class="card f-poppins">
+    <div class="label">Poppins <span class="tag sans">Anthropic 官方</span></div>
+    <div class="typing-line">Hi, I'm Rolex.</div>
+    <div class="typing-sub">Building agentic AI, reasoning & multimodal systems.</div>
+  </div>
+
+  <div class="card f-avenir">
+    <div class="label">Avenir Next <span class="tag" style="background:#f38ba8;color:#1e1e2e">macOS 系统</span></div>
+    <div class="typing-line">Hi, I'm Rolex.</div>
+    <div class="typing-sub">Building agentic AI, reasoning & multimodal systems.</div>
+  </div>
+
+  <div class="card f-helvetica">
+    <div class="label">Helvetica Now <span class="tag" style="background:#f38ba8;color:#1e1e2e">macOS ≈Neue</span></div>
+    <div class="typing-line">Hi, I'm Rolex.</div>
+    <div class="typing-sub">Building agentic AI, reasoning & multimodal systems.</div>
+  </div>
+
+  <div class="card f-inter">
+    <div class="label">Inter <span class="tag sans">≈ Helvetica Now</span></div>
+    <div class="typing-line">Hi, I'm Rolex.</div>
+    <div class="typing-sub">Building agentic AI, reasoning & multimodal systems.</div>
+  </div>
+
+  <div class="card f-nunito">
+    <div class="label">Nunito <span class="tag sans">≈ Avenir Next</span></div>
+    <div class="typing-line">Hi, I'm Rolex.</div>
+    <div class="typing-sub">Building agentic AI, reasoning & multimodal systems.</div>
+  </div>
+</div>
+
+<h2>🔤 衬线字体 (Serif) — 6 款</h2>
+<p class="sub">Anthropic Serif 是 Anthropic 官方定制衬线字体（Webflow CDN 托管，本页 @font-face 加载）。<b>readme-typing-svg 不支持</b>，仅本地预览。</p>
+
+<div class="grid-2">
+  <div class="card f-anthro-serif">
+    <div class="label">Anthropic Serif <span class="tag" style="background:#cba6f7;color:#1e1e2e">Anthropic 官方</span></div>
+    <div class="typing-line">Hi, I'm Rolex.</div>
+    <div class="typing-sub">Building agentic AI, reasoning & multimodal systems.</div>
+  </div>
+
+  <div class="card f-lora">
+    <div class="label">Lora <span class="tag" style="background:#45475a;color:#f9e2af">替代</span></div>
+    <div class="typing-line">Hi, I'm Rolex.</div>
+    <div class="typing-sub">Building agentic AI, reasoning & multimodal systems.</div>
+  </div>
+
+  <div class="card f-playfair">
+    <div class="label">Playfair Display <span class="tag" style="background:#45475a;color:#f9e2af">serif</span></div>
+    <div class="typing-line">Hi, I'm Rolex.</div>
+    <div class="typing-sub">Building agentic AI, reasoning & multimodal systems.</div>
+  </div>
+
+  <div class="card f-merriweather">
+    <div class="label">Merriweather <span class="tag" style="background:#45475a;color:#f9e2af">serif</span></div>
+    <div class="typing-line">Hi, I'm Rolex.</div>
+    <div class="typing-sub">Building agentic AI, reasoning & multimodal systems.</div>
+  </div>
+
+  <div class="card f-crimson">
+    <div class="label">Crimson Pro <span class="tag" style="background:#45475a;color:#f9e2af">serif</span></div>
+    <div class="typing-line">Hi, I'm Rolex.</div>
+    <div class="typing-sub">Building agentic AI, reasoning & multimodal systems.</div>
+  </div>
+
+  <div class="card f-libre">
+    <div class="label">Libre Baskerville <span class="tag" style="background:#45475a;color:#f9e2af">serif</span></div>
+    <div class="typing-line">Hi, I'm Rolex.</div>
+    <div class="typing-sub">Building agentic AI, reasoning & multimodal systems.</div>
+  </div>
+</div>
+
+<h2>⚡ 快速对比 — 只看第一行</h2>
+
+<div class="grid-5">
+  <div class="card f-fira"><div class="label">Fira Code</div><div class="typing-line" style="font-size:22px">Hi, I'm Rolex.</div></div>
+  <div class="card f-jet"><div class="label">JetBrains</div><div class="typing-line" style="font-size:22px">Hi, I'm Rolex.</div></div>
+  <div class="card f-source"><div class="label">Src Code</div><div class="typing-line" style="font-size:22px">Hi, I'm Rolex.</div></div>
+  <div class="card f-ibm"><div class="label">IBM Plex</div><div class="typing-line" style="font-size:22px">Hi, I'm Rolex.</div></div>
+  <div class="card f-space"><div class="label">Space</div><div class="typing-line" style="font-size:22px">Hi, I'm Rolex.</div></div>
+</div>
+<div class="grid-5" style="margin-top:12px">
+  <div class="card f-incon"><div class="label">Inconsolata</div><div class="typing-line" style="font-size:22px">Hi, I'm Rolex.</div></div>
+  <div class="card f-roboto"><div class="label">Roboto</div><div class="typing-line" style="font-size:22px">Hi, I'm Rolex.</div></div>
+  <div class="card f-poppins"><div class="label">Poppins</div><div class="typing-line" style="font-size:22px">Hi, I'm Rolex.</div></div>
+  <div class="card f-avenir"><div class="label">Avenir Next</div><div class="typing-line" style="font-size:22px">Hi, I'm Rolex.</div></div>
+  <div class="card f-helvetica"><div class="label">Helvetica Now</div><div class="typing-line" style="font-size:22px">Hi, I'm Rolex.</div></div>
+</div>
+<div class="grid-5" style="margin-top:12px">
+  <div class="card f-inter"><div class="label">Inter</div><div class="typing-line" style="font-size:22px">Hi, I'm Rolex.</div></div>
+  <div class="card f-nunito"><div class="label">Nunito</div><div class="typing-line" style="font-size:22px">Hi, I'm Rolex.</div></div>
+</div>
+<div class="grid-5" style="margin-top:12px">
+  <div class="card f-anthro-serif"><div class="label">Anthropic Serif</div><div class="typing-line" style="font-size:22px">Hi, I'm Rolex.</div></div>
+  <div class="card f-lora"><div class="label">Lora</div><div class="typing-line" style="font-size:22px">Hi, I'm Rolex.</div></div>
+  <div class="card f-playfair"><div class="label">Playfair</div><div class="typing-line" style="font-size:22px">Hi, I'm Rolex.</div></div>
+  <div class="card f-merriweather"><div class="label">Merriweather</div><div class="typing-line" style="font-size:22px">Hi, I'm Rolex.</div></div>
+  <div class="card f-crimson"><div class="label">Crimson</div><div class="typing-line" style="font-size:22px">Hi, I'm Rolex.</div></div>
+</div>
+
+<h2>📋 10 款字体完整对比</h2>
+
+<table class="compare-table">
+  <tr><th>字体</th><th>readme-typing-svg 参数</th><th>类别</th><th>iIl1</th><th>0O</th><th>连字</th><th>气质</th></tr>
+  <tr>
+    <td style="font-family:'Fira Code';font-weight:600">Fira Code</td>
+    <td><code>font=Fira+Code</code></td>
+    <td>Mono</td>
+    <td style="font-family:'Fira Code';font-size:18px">i I l 1</td>
+    <td style="font-family:'Fira Code';font-size:18px">0 O</td>
+    <td>&#10003;</td>
+    <td>圆润、编码感强、易读</td>
+  </tr>
+  <tr>
+    <td style="font-family:'JetBrains Mono';font-weight:600">JetBrains Mono</td>
+    <td><code>font=JetBrains+Mono</code></td>
+    <td>Mono</td>
+    <td style="font-family:'JetBrains Mono';font-size:18px">i I l 1</td>
+    <td style="font-family:'JetBrains Mono';font-size:18px">0 O</td>
+    <td>&#10003;</td>
+    <td>锐利、现代、干净</td>
+  </tr>
+  <tr>
+    <td style="font-family:'Source Code Pro';font-weight:600">Source Code Pro</td>
+    <td><code>font=Source+Code+Pro</code></td>
+    <td>Mono</td>
+    <td style="font-family:'Source Code Pro';font-size:18px">i I l 1</td>
+    <td style="font-family:'Source Code Pro';font-size:18px">0 O</td>
+    <td>&#10007;</td>
+    <td>温暖、经典、Adobe 血统</td>
+  </tr>
+  <tr>
+    <td style="font-family:'IBM Plex Mono';font-weight:600">IBM Plex Mono</td>
+    <td><code>font=IBM+Plex+Mono</code></td>
+    <td>Mono</td>
+    <td style="font-family:'IBM Plex Mono';font-size:18px">i I l 1</td>
+    <td style="font-family:'IBM Plex Mono';font-size:18px">0 O</td>
+    <td>&#10007;</td>
+    <td>工程感、独特、有性格</td>
+  </tr>
+  <tr>
+    <td style="font-family:'Space Mono';font-weight:600">Space Mono</td>
+    <td><code>font=Space+Mono</code></td>
+    <td>Mono</td>
+    <td style="font-family:'Space Mono';font-size:18px">i I l 1</td>
+    <td style="font-family:'Space Mono';font-size:18px">0 O</td>
+    <td>&#10007;</td>
+    <td>复古未来风、粗壮有力</td>
+  </tr>
+  <tr>
+    <td style="font-family:'Inconsolata';font-weight:600">Inconsolata</td>
+    <td><code>font=Inconsolata</code></td>
+    <td>Mono</td>
+    <td style="font-family:'Inconsolata';font-size:18px">i I l 1</td>
+    <td style="font-family:'Inconsolata';font-size:18px">0 O</td>
+    <td>&#10007;</td>
+    <td>老派终端感、极简</td>
+  </tr>
+  <tr>
+    <td style="font-family:'Roboto Mono';font-weight:600">Roboto Mono</td>
+    <td><code>font=Roboto+Mono</code></td>
+    <td>Mono</td>
+    <td style="font-family:'Roboto Mono';font-size:18px">i I l 1</td>
+    <td style="font-family:'Roboto Mono';font-size:18px">0 O</td>
+    <td>&#10007;</td>
+    <td>中性、万能、Google 风格</td>
+  </tr>
+  <tr>
+    <td style="font-family:'Poppins';font-weight:600">Poppins</td>
+    <td><code>font=Poppins</code></td>
+    <td>Sans</td>
+    <td style="font-family:'Poppins';font-size:18px">i I l 1</td>
+    <td style="font-family:'Poppins';font-size:18px">0 O</td>
+    <td>&#10007;</td>
+    <td><b>Anthropic 官方字体</b>、几何感、现代品牌</td>
+  </tr>
+  <tr>
+    <td style="font-family:'Avenir Next';font-weight:600">Avenir Next</td>
+    <td style="color:#f38ba8">不可用</td>
+    <td>Sans</td>
+    <td style="font-family:'Avenir Next';font-size:18px">i I l 1</td>
+    <td style="font-family:'Avenir Next';font-size:18px">0 O</td>
+    <td>&#10007;</td>
+    <td style="color:#f38ba8">macOS 系统字体、readme-typing-svg 不支持</td>
+  </tr>
+  <tr>
+    <td style="font-family:'Helvetica Neue';font-weight:600">Helvetica Now</td>
+    <td style="color:#f38ba8">不可用</td>
+    <td>Sans</td>
+    <td style="font-family:'Helvetica Neue';font-size:18px">i I l 1</td>
+    <td style="font-family:'Helvetica Neue';font-size:18px">0 O</td>
+    <td>&#10007;</td>
+    <td style="color:#f38ba8">商业字体、本页用 Helvetica Neue 近似</td>
+  </tr>
+  <tr>
+    <td style="font-family:'Inter';font-weight:600">Inter</td>
+    <td><code>font=Inter</code></td>
+    <td>Sans</td>
+    <td style="font-family:'Inter';font-size:18px">i I l 1</td>
+    <td style="font-family:'Inter';font-size:18px">0 O</td>
+    <td>&#10007;</td>
+    <td>≈ Helvetica Now、屏幕优先、极清晰</td>
+  </tr>
+  <tr>
+    <td style="font-family:'Nunito';font-weight:600">Nunito</td>
+    <td><code>font=Nunito</code></td>
+    <td>Sans</td>
+    <td style="font-family:'Nunito';font-size:18px">i I l 1</td>
+    <td style="font-family:'Nunito';font-size:18px">0 O</td>
+    <td>&#10007;</td>
+    <td>≈ Avenir Next、圆润友好、亲和</td>
+  </tr>
+  <tr>
+    <td style="font-family:'Anthropic Serif';font-weight:600">Anthropic Serif</td>
+    <td style="color:#f38ba8">不可用</td>
+    <td>Serif</td>
+    <td style="font-family:'Anthropic Serif';font-size:18px">i I l 1</td>
+    <td style="font-family:'Anthropic Serif';font-size:18px">0 O</td>
+    <td>&#10007;</td>
+    <td><b>Anthropic 官方定制</b>、仅本页 @font-face 预览</td>
+  </tr>
+  <tr>
+    <td style="font-family:'Lora';font-weight:600">Lora</td>
+    <td><code>font=Lora</code></td>
+    <td>Serif</td>
+    <td style="font-family:'Lora';font-size:18px">i I l 1</td>
+    <td style="font-family:'Lora';font-size:18px">0 O</td>
+    <td>&#10007;</td>
+    <td>≈ Anthropic Serif 替代、优雅学术</td>
+  </tr>
+  <tr>
+    <td style="font-family:'Playfair Display';font-weight:600">Playfair Display</td>
+    <td><code>font=Playfair+Display</code></td>
+    <td>Serif</td>
+    <td style="font-family:'Playfair Display';font-size:18px">i I l 1</td>
+    <td style="font-family:'Playfair Display';font-size:18px">0 O</td>
+    <td>&#10007;</td>
+    <td>高端杂志感、笔画对比强烈</td>
+  </tr>
+  <tr>
+    <td style="font-family:'Merriweather';font-weight:600">Merriweather</td>
+    <td><code>font=Merriweather</code></td>
+    <td>Serif</td>
+    <td style="font-family:'Merriweather';font-size:18px">i I l 1</td>
+    <td style="font-family:'Merriweather';font-size:18px">0 O</td>
+    <td>&#10007;</td>
+    <td>温暖可读、屏幕 serif 标杆</td>
+  </tr>
+  <tr>
+    <td style="font-family:'Crimson Pro';font-weight:600">Crimson Pro</td>
+    <td><code>font=Crimson+Pro</code></td>
+    <td>Serif</td>
+    <td style="font-family:'Crimson Pro';font-size:18px">i I l 1</td>
+    <td style="font-family:'Crimson Pro';font-size:18px">0 O</td>
+    <td>&#10007;</td>
+    <td>精炼、经典、Garamond 风格</td>
+  </tr>
+  <tr>
+    <td style="font-family:'Libre Baskerville';font-weight:600">Libre Baskerville</td>
+    <td><code>font=Libre+Baskerville</code></td>
+    <td>Serif</td>
+    <td style="font-family:'Libre Baskerville';font-size:18px">i I l 1</td>
+    <td style="font-family:'Libre Baskerville';font-size:18px">0 O</td>
+    <td>&#10007;</td>
+    <td>传统 Baskerville 复刻、庄重典雅</td>
+  </tr>
+</table>
+
+<p class="note">
+  <b>Anthropic Sans / Serif / Mono</b> 是 Anthropic 官方定制字体，通过 Webflow CDN 托管，本页 @font-face 真实加载。
+  <b>readme-typing-svg 仅支持 Google Fonts</b>，这三个字体无法在 GitHub README 中使用。
+  Avenir Next、Helvetica Now 同理，仅本页系统字体预览。
+  如需在 README 中生效，只能选择表中标注了 <code>font=</code> 参数的字体。
+</p>
+
+<p style="color:#585b70;margin-top:32px;font-size:13px">
+  PROTOTYPE — 选完告诉我字体名，直接改 README。用完后删除此文件。
+</p>
+
+</body>
+</html>

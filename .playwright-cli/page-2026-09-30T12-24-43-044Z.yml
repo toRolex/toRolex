@@ -1,0 +1,38 @@
+- generic [active] [ref=e1]:
+  - img "Rolex — I make agents that actually ship. · github.com/toRolex" [ref=e3]
+  - separator [ref=e4]
+  - heading "Featured Work" [level=2] [ref=e5]
+  - blockquote [ref=e6]:
+    - paragraph [ref=e7]: 我为以下开源项目提交过贡献。
+  - list [ref=e8]:
+    - listitem [ref=e9]:
+      - strong [ref=e10]:
+        - link "openclaw/openclaw" [ref=e11] [cursor=pointer]:
+          - /url: https://github.com/openclaw/openclaw
+      - text: — The AI that really does things. Any OS. Any Platform. 🦞
+    - listitem [ref=e12]:
+      - strong [ref=e13]:
+        - link "NousResearch/hermes-agent" [ref=e14] [cursor=pointer]:
+          - /url: https://github.com/NousResearch/hermes-agent
+      - text: — The agent that grows with you
+    - listitem [ref=e15]:
+      - strong [ref=e16]:
+        - link "nicobailon/pi-subagents" [ref=e17] [cursor=pointer]:
+          - /url: https://github.com/nicobailon/pi-subagents
+      - text: — Pi extension for async subagent delegation
+    - listitem [ref=e18]:
+      - strong [ref=e19]:
+        - link "coulsontl/ai-toolbox" [ref=e20] [cursor=pointer]:
+          - /url: https://github.com/coulsontl/ai-toolbox
+      - text: — Personal AI Toolbox
+  - separator [ref=e21]
+  - generic [ref=e22]:
+    - link [ref=e23] [cursor=pointer]:
+      - /url: mailto:torolex@163.com
+      - img "Email" [ref=e24]
+    - link [ref=e25] [cursor=pointer]:
+      - /url: https://v.douyin.com/5dHlAyLV1M0/
+      - img "抖音" [ref=e26]
+    - link [ref=e27] [cursor=pointer]:
+      - /url: https://xhslink.com/m/5S1wEyfGJcz
+      - img "小红书" [ref=e28]

@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Stats + Activity 合并原型</title>
+<style>
+  :root { --bg: #11111b; --surface: #1e1e2e; --text: #cdd6f4; --mauve: #cba6f7; --blue: #89b4fa; }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { background: var(--bg); color: var(--text); font-family: -apple-system, BlinkMacSystemFont, sans-serif; min-height: 100vh; }
+
+  .header { padding: 20px; text-align: center; }
+  .header img { max-width: 100%; height: auto; }
+
+  .stats { padding: 20px; max-width: 1200px; margin: 0 auto; }
+  .stats img { width: 100%; height: 180px; object-fit: contain; border-radius: 6px; background: var(--surface); }
+
+  .divider { border: 0; border-top: 1px solid #313244; margin: 20px auto; max-width: 1200px; }
+
+  /* ── Variant A: 2-column grid ── */
+  .layout-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+  .layout-grid .wide { grid-column: 1 / -1; }
+  .layout-grid .wide img { height: 200px; }
+
+  /* ── Variant B: Horizontal row ── */
+  .layout-row { display: flex; gap: 8px; }
+  .layout-row > * { flex: 1; min-width: 0; }
+  .layout-row img { height: 200px; }
+
+  /* ── Variant C: 3-cards + wide ── */
+  .layout-3top { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; }
+  .layout-3top + .graph { margin-top: 12px; }
+  .graph img { height: 200px; }
+
+  /* ── Variant D: Vertical stack ── */
+  .layout-stack { display: flex; flex-direction: column; gap: 8px; }
+  .layout-stack .cards { display: flex; gap: 8px; }
+  .layout-stack .cards > * { flex: 1; min-width: 0; }
+
+  /* ── Switcher ── */
+  .switcher {
+    position: fixed; bottom: 16px; left: 50%; transform: translateX(-50%);
+    display: flex; align-items: center; gap: 12px;
+    background: #313244; border-radius: 99px; padding: 8px 20px;
+    box-shadow: 0 4px 24px rgba(0,0,0,.5); z-index: 999;
+    font-size: 14px; user-select: none;
+  }
+  .switcher button {
+    background: none; border: none; color: var(--text); cursor: pointer;
+    font-size: 18px; padding: 4px 8px; border-radius: 6px;
+  }
+  .switcher button:hover { background: rgba(255,255,255,.08); }
+  .switcher .label { font-weight: 600; color: var(--mauve); min-width: 180px; text-align: center; }
+  .switcher .label .vname { color: var(--text); font-weight: 400; margin-left: 4px; }
+
+  footer { padding: 40px 20px; text-align: center; }
+</style>
+</head>
+<body>
+
+<div class="header">
+  <img src="https://capsule-render.vercel.app/api?type=waving&height=180&color=0:11111b,45:181825,100:cba6f7&text=toRolex&fontSize=36&fontColor=cdd6f4&fontAlignY=38&desc=Agentic%20AI%20%7C%20Reasoning%20Systems%20%7C%20Multimodal%20Workflows&descAlignY=58&animation=fadeIn" alt="header" />
+</div>
+
+<div class="header">
+  <img src="https://readme-typing-svg.herokuapp.com?font=Fira+Code&size=20&duration=2800&pause=900&center=true&vCenter=true&width=900&color=cdd6f4&lines=Hi%2C+I%27m+Rolex.;Building+agentic+AI%2C+reasoning+%26+multimodal+systems.;From+math+training+to+production-grade+engineering." alt="Typing SVG" />
+</div>
+
+<hr class="divider">
+
+<div class="stats" id="prototype-root"></div>
+
+<footer>
+  <p style="color:#585b70">Prototype · 按 ← → 切换布局</p>
+</footer>
+
+<div class="switcher">
+  <button onclick="cycle(-1)">◀</button>
+  <span class="label" id="switcher-label"></span>
+  <button onclick="cycle(1)">▶</button>
+</div>
+
+<script>
+const CARD_SRC = (n) => n === 'streak'
+  ? 'https://github-readme-streak-stats.herokuapp.com/?user=toRolex&theme=catppuccin-mocha&hide_border=true&background=1e1e2e&stroke=cba6f7&ring=89b4fa&fire=fab387&currStreakLabel=cdd6f4'
+  : n === 'langs'
+  ? 'https://github-readme-stats-eight-theta.vercel.app/api/top-langs/?username=toRolex&layout=compact&theme=catppuccin_mocha&hide_border=true&bg_color=1e1e2e&title_color=cba6f7&text_color=cdd6f4&langs_count=8'
+  : 'https://github-readme-stats-eight-theta.vercel.app/api?username=toRolex&show_icons=true&theme=catppuccin_mocha&hide_border=true&bg_color=1e1e2e&title_color=cba6f7&icon_color=89b4fa&text_color=cdd6f4&include_all_commits=true&count_private=true';
+
+const ACTIVITY_SRC = 'https://github-readme-activity-graph.vercel.app/graph?username=toRolex&theme=catppuccin-mocha&bg_color=1e1e2e&color=cba6f7&line=89b4fa&point=f9e2af&hide_border=true&area=true';
+
+function h(html) { const d = document.createElement('div'); d.innerHTML = html; return d.firstChild; }
+
+const src = (n) => `https://github-readme-stats-eight-theta.vercel.app/api?username=toRolex&show_icons=true&theme=catppuccin_mocha&hide_border=true&bg_color=1e1e2e&title_color=cba6f7&icon_color=89b4fa&text_color=cdd6f4&include_all_commits=true&count_private=true`;
+
+const variants = {
+  A: {
+    name: '两列网格',
+    render(root) {
+      root.className = '';
+      const d = document.createElement('div'); d.className = 'layout-grid';
+      d.innerHTML = `
+        <div><img src="${CARD_SRC('stats')}" loading="lazy"></div>
+        <div><img src="${CARD_SRC('langs')}" loading="lazy"></div>
+        <div class="wide"><img src="${ACTIVITY_SRC}" loading="lazy"></div>
+        <div class="wide"><img src="${CARD_SRC('streak')}" loading="lazy" style="height:160px"></div>`;
+      root.appendChild(d);
+    }
+  },
+  B: {
+    name: '三卡一行 + 活动图',
+    render(root) {
+      root.className = '';
+      const d = document.createElement('div');
+      d.innerHTML = `
+        <div class="layout-3top">
+          <div><img src="${CARD_SRC('stats')}" loading="lazy"></div>
+          <div><img src="${CARD_SRC('langs')}" loading="lazy"></div>
+          <div><img src="${CARD_SRC('streak')}" loading="lazy"></div>
+        </div>
+        <div class="graph"><img src="${ACTIVITY_SRC}" loading="lazy"></div>`;
+      root.appendChild(d);
+    }
+  },
+  C: {
+    name: '竖排紧凑堆叠',
+    render(root) {
+      root.className = '';
+      const d = document.createElement('div'); d.className = 'layout-stack';
+      d.innerHTML = `
+        <div class="cards">
+          <div><img src="${CARD_SRC('stats')}" loading="lazy"></div>
+          <div><img src="${CARD_SRC('langs')}" loading="lazy"></div>
+        </div>
+        <div><img src="${ACTIVITY_SRC}" loading="lazy"></div>
+        <div><img src="${CARD_SRC('streak')}" loading="lazy" style="height:160px"></div>`;
+      root.appendChild(d);
+    }
+  },
+  D: {
+    name: '并排四列（紧凑）',
+    render(root) {
+      root.className = '';
+      const d = document.createElement('div'); d.className = 'layout-row';
+      d.innerHTML = `
+        <div><img src="${CARD_SRC('stats')}" loading="lazy" style="height:220px"></div>
+        <div><img src="${CARD_SRC('langs')}" loading="lazy" style="height:220px"></div>
+        <div><img src="${CARD_SRC('streak')}" loading="lazy" style="height:220px"></div>
+        <div><img src="${ACTIVITY_SRC}" loading="lazy" style="height:220px"></div>`;
+      root.appendChild(d);
+    }
+  }
+};
+
+const keys = Object.keys(variants);
+let current = 0;
+const root = document.getElementById('prototype-root');
+const label = document.getElementById('switcher-label');
+
+function render(i) {
+  root.innerHTML = '';
+  variants[keys[i]].render(root);
+  label.innerHTML = `<span style="color:#94e2d5">${keys[i]}</span><span class="vname">— ${variants[keys[i]].name}</span>`;
+}
+
+function cycle(dir) {
+  current = (current + dir + keys.length) % keys.length;
+  render(current);
+}
+
+document.addEventListener('keydown', e => {
+  if (e.target.tagName === 'INPUT' || e.target.tagName === 'TEXTAREA' || e.target.isContentEditable) return;
+  if (e.key === 'ArrowLeft') cycle(-1);
+  if (e.key === 'ArrowRight') cycle(1);
+});
+
+render(0);
+</script>
+</body>
+</html>

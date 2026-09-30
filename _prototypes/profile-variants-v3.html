@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<!-- PROTOTYPE v3 — throwaway。回答："以旧号 toRolex 真实项目为主体、GitHub 原生风格的主页长什么样？"
+     不介绍 HIVE（新号小号内容偏差）。双击打开，底部切换 3 个 variant。 -->
+<html lang="zh">
+<head>
+<meta charset="utf-8">
+<title>PROTOTYPE v3 — 旧号真实项目版</title>
+<style>
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{background:#0d1117;color:#c9d1d9;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif;
+    padding:0 0 140px;font-size:16px;line-height:1.6}
+  .gh-top{background:#010409;border-bottom:1px solid #30363d;padding:14px 24px;display:flex;gap:18px;align-items:center;font-size:14px;color:#8d96a0}
+  .gh-top b{color:#e6edf3}
+  .gh-top .logo{width:30px;height:30px;border-radius:50%;background:#e6edf3;color:#0d1117;display:flex;align-items:center;justify-content:center;font-weight:700}
+  .wrap{max-width:1012px;margin:24px auto;display:flex;gap:24px;padding:0 16px}
+  aside{width:296px;flex-shrink:0}
+  aside .ava{border-radius:50%;border:1px solid #30363d;width:100%;aspect-ratio:1;background:#21262d;display:flex;align-items:center;justify-content:center;font-size:64px;color:#58a6ff}
+  .uname{font-size:20px;font-weight:600;color:#e6edf3;margin-top:12px}
+  .handle{color:#8d96a0;font-size:16px}
+  .bio{margin-top:12px}
+  .meta{margin-top:12px;font-size:14px;color:#8d96a0;display:flex;flex-direction:column;gap:6px}
+  .meta span::before{content:"· ";color:#30363d}
+  main{flex:1;min-width:0}
+  h2{font-size:16px;font-weight:600;color:#e6edf3;padding-bottom:8px;border-bottom:1px solid #21262d;margin:28px 0 16px}
+  h2:first-child{margin-top:0}
+  .md h1{font-size:1.5em;color:#e6edf3;border-bottom:1px solid #21262d;padding-bottom:.3em;margin:.4em 0 .5em}
+  .md h3{font-size:1.1em;color:#e6edf3;margin:1.2em 0 .4em}
+  .md p{margin:0 0 12px}
+  .md ul{margin:0 0 12px 2em}
+  .md li{margin:3px 0}
+  .md blockquote{border-left:3px solid #30363d;color:#8d96a0;padding:0 1em;margin:0 0 12px}
+  .md table{border-collapse:collapse;margin:0 0 12px;width:100%}
+  .md td,.md th{border:1px solid #30363d;padding:6px 13px;font-size:14.5px}
+  .md th{color:#e6edf3;text-align:left;background:#161b22}
+  .md hr{border:0;border-top:1px solid #21262d;margin:20px 0}
+  .md details{border:1px solid #30363d;border-radius:6px;padding:8px 16px;margin:0 0 12px}
+  .md summary{cursor:pointer;color:#e6edf3;font-weight:600}
+  .md code{background:#6e768166;padding:.2em .4em;border-radius:6px;font-size:85%;font-family:ui-monospace,Menlo,monospace}
+  .badge{height:22px;vertical-align:middle;margin:0 4px 6px 0}
+  a{color:#2f81f7;text-decoration:none}
+  a:hover{text-decoration:underline}
+  .pin{border:1px solid #30363d;border-radius:6px;padding:14px 16px;margin-bottom:12px;background:#0d1117}
+  .pin b{color:#2f81f7;font-size:15px}
+  .pin .lang{float:right;color:#8d96a0;font-size:12px}
+  .pin .lang i{display:inline-block;width:10px;height:10px;border-radius:50%;margin-right:4px}
+  .pin p{color:#8d96a0;font-size:13.5px;margin:6px 0 0}
+  .pin .meta2{font-size:12px;color:#8d96a0;margin-top:8px}
+  .pin .meta2 span{margin-right:14px}
+
+  .switcher{position:fixed;bottom:20px;left:50%;transform:translateX(-50%);
+    background:#161b22;border:1px solid #30363d;border-radius:12px;padding:10px;display:flex;gap:8px;z-index:10;box-shadow:0 10px 40px rgba(0,0,0,.6);max-width:94vw;flex-wrap:wrap;justify-content:center}
+  .switcher button{background:transparent;color:#8d96a0;border:1px solid transparent;border-radius:8px;padding:8px 14px;cursor:pointer;font-size:13px;font-family:inherit}
+  .switcher button:hover{color:#e6edf3;border-color:#30363d}
+  .switcher button.active{background:#21262d;color:#79c0ff;border-color:#2f81f7}
+  .statebar{position:fixed;bottom:76px;left:50%;transform:translateX(-50%);
+    background:#161b22;border:1px solid #30363d;border-radius:8px;padding:6px 14px;font-size:12px;color:#8d96a0;z-index:10;white-space:nowrap}
+  .statebar b{color:#7ee787}
+  .variant{display:none}
+  .variant.show{display:block;animation:fade .3s ease}
+  @keyframes fade{from{opacity:0}to{opacity:1}}
+</style>
+</head>
+<body>
+
+<header class="gh-top"><div class="logo">R</div><b>CallMeRol</b><span>· Profile</span><span style="margin-left:auto">PROTOTYPE v3 — 旧号真实项目为主体</span></header>
+
+<div class="wrap">
+  <aside>
+    <div class="ava">R</div>
+    <div class="uname">Rolex</div>
+    <div class="handle">CallMeRol</div>
+    <div class="bio" id="side-bio"></div>
+    <div class="meta">
+      <span>SYSU · CS Master '29</span>
+      <span>📧 torolex@163.com</span>
+    </div>
+  </aside>
+
+  <main>
+
+  <!-- ============ A：工作室总览（pin 卡片风） ============ -->
+  <section class="variant" id="vA" data-label="A · 项目工作室（pin 卡片）">
+    <div class="md">
+      <h1>Rolex <span style="color:#8d96a0;font-weight:400">/ CallMeRol</span></h1>
+      <p><b>Building AI-native software end to end</b> — research systems, coding-agent tooling, and products that ship.<br>
+      <span style="color:#8d96a0">前任账号 <b>@toRolex</b> 被错误封禁（申诉中）；这里是我的新家，作品照常营业。</span></p>
+
+      <h3>🛠 Selected work</h3>
+
+      <div class="pin"><span class="lang"><i style="background:#3178c6"></i>TypeScript</span>
+        <b>Research-OS</b> <span style="color:#8d96a0;font-size:12px">archived · 226 commits</span>
+        <p>Provider-neutral 科研 agent 系统：Agent Skills + typed Artifact 契约 + 确定性 CLI，面向用户掌控流程的科研自动化。</p>
+        <div class="meta2"><span>⚙ agent orchestration</span><span>📦 typed contracts</span></div>
+      </div>
+
+      <div class="pin"><span class="lang"><i style="background:#f1e05a"></i>JavaScript</span>
+        <b>periscope</b> <span style="color:#8d96a0;font-size:12px">GPL-3.0 · 71 commits</span>
+        <p>给纯文本 coding agent 的视觉桥：把截图/图片译成结构化文字描述，让 agent 看见世界。插件化，Agent Plugins 1.0。</p>
+        <div class="meta2"><span>👁 multimodal</span><span>🔌 plugin system</span></div>
+      </div>
+
+      <div class="pin"><span class="lang"><i style="background:#3178c6"></i>TypeScript</span>
+        <b>ai-video-pipeline</b> <span style="color:#8d96a0;font-size:12px">516 commits</span>
+        <p>AI 驱动的短视频自动化生产系统：control-plane + runtime-worker 架构，Web 前端全流程操作，生产环境在跑。</p>
+        <div class="meta2"><span>🎬 production system</span><span>🚀 real users</span></div>
+      </div>
+
+      <div class="pin"><span class="lang"><i style="background:#3572A5"></i>Python</span>
+        <b>PostHub</b> <span style="color:#8d96a0;font-size:12px">124 commits</span>
+        <p>发布中枢：一个视频，一键/定时分发到抖音、小红书、视频号。内容生产的最后一公里。</p>
+        <div class="meta2"><span>📣 distribution</span></div>
+      </div>
+
+      <h3>🧰 Also</h3>
+      <p>
+        <b>tuxevil-rotator</b>（<a href="https://www.npmjs.com/package/tuxevil-rotator">npm</a> · multi-provider AI proxy rotator）·
+        <b>fund-pilot</b>（量化投研）·
+        <b>dictionary-of-ai-coding-zh</b>（AI 编程词典）·
+        <b>live-photo</b> · <b>pasteup</b> · <b>sira</b>（pure-skill research repo）
+      </p>
+    </div>
+  </section>
+
+  <!-- ============ B：证据表（投资人视角） ============ -->
+  <section class="variant" id="vB" data-label="B · 证据表（投资人视角）">
+    <div class="md">
+      <h1>⌘ Rolex</h1>
+      <p>I build <b>AI-native systems that ship</b>: agent infrastructure, coding-agent tooling, and full content-production pipelines. CS Master @ <b>SYSU</b> (2029, rank 1/68).</p>
+
+      <h3>What I've shipped</h3>
+      <table>
+        <tr><th>System</th><th>Scale</th><th>What it proves</th></tr>
+        <tr><td><b>ai-video-pipeline</b></td><td>516 commits · in production</td><td>可以独立交付并运营一套多组件生产系统（control-plane + workers + Web 前端）</td></tr>
+        <tr><td><b>Research-OS</b></td><td>226 commits</td><td>agent 编排的架构能力：provider-neutral skills、typed artifact 契约、确定性 CLI</td></tr>
+        <tr><td><b>periscope</b></td><td>GPL-3.0 OSS</td><td>multimodal 工具链设计 + 插件生态思维，开源治理</td></tr>
+        <tr><td><b>PostHub</b> + <b>tuxevil-rotator</b></td><td>124 commits · npm</td><td>从生产到分发到基础设施的完整产品链</td></tr>
+      </table>
+
+      <h3>Direction</h3>
+      <blockquote><b>Agentic AI · Reasoning Systems · Multimodal Workflows</b><br>
+      从数学训练到 production-grade engineering——我相信下一波价值在"agent 作为同事"的基础设施上。</blockquote>
+
+      <p><span style="color:#8d96a0">⚠ 原账号 <b>@toRolex</b> 被错误封禁，申诉进行中。全部作品将随解封恢复，此处为镜像档案。</span></p>
+
+      <p>
+        <img class="badge" src="https://img.shields.io/badge/focus-agentic_AI-cba6f7?style=flat-square&labelColor=1e1e2e" alt="">
+        <img class="badge" src="https://img.shields.io/badge/stack-Python_·_TypeScript_·_React-313244?style=flat-square&labelColor=181825" alt="">
+        <img class="badge" src="https://img.shields.io/badge/邮箱-torolex@163.com-D14836?style=flat-square&logo=gmail&logoColor=white" alt="">
+      </p>
+    </div>
+  </section>
+
+  <!-- ============ C：叙事型（数学→系统→产品） ============ -->
+  <section class="variant" id="vC" data-label="C · 叙事型（一句话弧线）">
+    <div class="md">
+      <h1>Rolex</h1>
+      <p><b>数学训练 → reasoning systems → production-grade AI engineering.</b></p>
+      <p>我在做的东西，一句话：<i>让 AI agent 像同事一样干活，并且真的有人用它干活。</i></p>
+
+      <h3>Now / Built</h3>
+      <ul>
+        <li>🎬 <b>ai-video-pipeline</b> — 跑在生产上的 AI 短视频流水线（516 commits）：control-plane + worker 架构，从生成到分发全链路</li>
+        <li>🔬 <b>Research-OS</b> — provider-neutral 科研 agent 系统：skills、typed artifacts、确定性 CLI</li>
+        <li>👁 <b>periscope</b> — 给纯文本 coding agent 的视觉桥（GPL-3.0）：把图片译成 agent 可用的文字世界</li>
+        <li>📣 <b>PostHub</b> · 📦 <b>tuxevil-rotator</b>（npm）· 📖 <b>dictionary-of-ai-coding-zh</b> 及其他 10+ 项目</li>
+      </ul>
+
+      <h3>About</h3>
+      <ul>
+        <li>🎓 SYSU CS Master '29 · Rank 1/68</li>
+        <li>📮 torolex@163.com</li>
+        <li>⚠ 旧号 <b>@toRolex</b> 误封申诉中 — 这里是作品镜像与更新前沿</li>
+      </ul>
+    </div>
+  </section>
+
+  </main>
+</div>
+
+<div class="statebar" id="statebar">state: <b id="statevar">—</b> · 3 variants · 旧号真实项目</div>
+<nav class="switcher" id="switcher"></nav>
+
+<script>
+  const variants=[...document.querySelectorAll('.variant')];
+  const nav=document.getElementById('switcher');
+  variants.forEach((v,i)=>{const b=document.createElement('button');b.textContent=v.dataset.label;b.onclick=()=>select(i);nav.appendChild(b)});
+  function select(i){variants.forEach((v,j)=>v.classList.toggle('show',i===j));
+    [...nav.children].forEach((b,j)=>b.classList.toggle('active',i===j));
+    document.getElementById('statevar').textContent=variants[i].dataset.label;
+    location.hash='v'+String.fromCharCode(65+i);}
+  const m=location.hash.match(/^#v([ABC])$/);select(m?'ABC'.indexOf(m[1]):0);
+</script>
+</body>
+</html>

@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<!-- PROTOTYPE v4 — throwaway。回答："以 ROLEX.png 的 Y2K 星芒拼贴美学为视觉语言的主页长什么样？"
+     白底、浅蓝星芒、黑色几何、手写体 Rolex、胶片感圆图。底部切换 3 个 variant。
+     注意：GitHub README 只能放静态图片，所以每个 variant 的头部 hero 是"将要生成的 SVG/PNG"的效果预览。 -->
+<html lang="zh">
+<head>
+<meta charset="utf-8">
+<title>PROTOTYPE v4 — ROLEX 星芒拼贴</title>
+<style>
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{background:#fff;color:#111;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif;
+    padding:0 0 140px;font-size:16px;line-height:1.65}
+  .wrap{max-width:900px;margin:0 auto;padding:0 16px}
+  .proto-tag{position:fixed;top:12px;right:12px;background:#111;color:#aee3f7;padding:6px 12px;border-radius:999px;
+    font-size:12px;z-index:20;letter-spacing:1px}
+
+  /* ---- 星芒 SVG 公共样式 ---- */
+  .spark{position:absolute;pointer-events:none}
+
+  /* ============ V1：全幅拼贴 hero + 内容卷轴 ============ */
+  .v1-hero{position:relative;text-align:center;padding:60px 0 40px;overflow:visible}
+  .v1-hero .disc{width:340px;height:340px;border-radius:50%;object-fit:cover;display:inline-block;
+    box-shadow:0 18px 40px rgba(0,0,0,.14)}
+  .v1-name{font-family:"Snell Roundhand","Brush Script MT",cursive;font-size:88px;font-weight:400;
+    margin-top:-38px;position:relative;letter-spacing:2px;color:#111}
+  .v1-name span{font-size:44px;vertical-align:baseline}
+  .v1-sub{font-size:15px;color:#555;margin-top:6px;letter-spacing:.5px}
+  .v1-orbit{position:relative;display:inline-block}
+  /* 内容区 */
+  .v1-body{max-width:640px;margin:30px auto 0;text-align:left}
+  .v1-body h3{font-size:13px;letter-spacing:3px;text-transform:uppercase;color:#8ec9e8;margin:34px 0 14px;
+    display:flex;align-items:center;gap:10px}
+  .v1-body h3::after{content:"";flex:1;height:1px;background:linear-gradient(90deg,#aee3f7,transparent)}
+  .work{display:flex;justify-content:space-between;align-items:baseline;gap:12px;padding:10px 0;
+    border-bottom:1px dashed #d7ecf5;font-size:15.5px}
+  .work b{font-weight:600}
+  .work span{color:#888;font-size:13px;white-space:nowrap}
+  .work p{color:#666;font-size:13.5px;flex:1;margin:0 8px}
+  .v1-foot{text-align:center;margin-top:44px;font-size:13.5px;color:#777}
+  .v1-foot a{color:#111;border-bottom:1px solid #aee3f7;text-decoration:none}
+  .sparkline{color:#111}
+
+  /* ============ V2：杂志卡（星芒角落 + 白卡内容） ============ */
+  .v2{position:relative}
+  .v2-card{border:1.5px solid #111;border-radius:2px;padding:52px 56px 44px;position:relative;background:#fff;
+    box-shadow:8px 8px 0 #d9f0f9}
+  .v2-card .corner-spark{position:absolute;top:-70px;right:-70px;width:190px}
+  .v2-card .corner-dot{position:absolute;width:26px;height:26px;background:#111;border-radius:50%;bottom:30px;right:36px}
+  .v2-kicker{display:flex;justify-content:space-between;font-size:12px;letter-spacing:3px;text-transform:uppercase;color:#555;
+    border-bottom:1px solid #111;padding-bottom:12px;margin-bottom:30px}
+  .v2-title{font-size:56px;line-height:1.06;font-weight:700;letter-spacing:-1px;max-width:520px}
+  .v2-title .circle-wrap{display:inline-block;position:relative}
+  .v2-title img{width:150px;height:150px;border-radius:50%;object-fit:cover;vertical-align:middle;margin:0 6px}
+  .v2-title .hand{font-family:"Snell Roundhand",cursive;font-weight:400;color:#2ea3d6;font-size:60px}
+  .v2-lede{margin:26px 0 8px;font-size:16.5px;max-width:560px;color:#333}
+  .v2-list{margin:28px 0 0;list-style:none}
+  .v2-list li{display:flex;gap:14px;padding:11px 0;border-bottom:1px solid #e8f4fa;font-size:15px;align-items:baseline}
+  .v2-list .no{font-size:12px;color:#8ec9e8;font-weight:700;letter-spacing:1px;min-width:26px}
+  .v2-list b{min-width:190px}
+  .v2-list span{color:#777;font-size:13.5px}
+  .v2-sig{margin-top:34px;display:flex;justify-content:space-between;align-items:center;font-size:13px;color:#666}
+  .v2-sig .name{font-family:"Snell Roundhand",cursive;font-size:34px;color:#111}
+
+  /* ============ V3：歌单封面风（横排碟片） ============ */
+  .v3{position:relative;text-align:center;padding-top:50px}
+  .v3 .track{display:flex;gap:0;align-items:center;max-width:680px;margin:26px auto 0;text-align:left;
+    padding:16px 18px;border-radius:16px;transition:background .2s}
+  .v3 .track:hover{background:#f2fafd}
+  .v3 .disc-s{width:76px;height:76px;border-radius:50%;object-fit:cover;flex-shrink:0;
+    border:1px solid #e2eef5;box-shadow:0 3px 10px rgba(0,0,0,.08)}
+  .v3 .t-info{margin-left:18px;flex:1}
+  .v3 .t-name{font-weight:700;font-size:16.5px}
+  .v3 .t-name em{font-family:"Snell Roundhand",cursive;font-style:normal;color:#2ea3d6;font-size:20px;margin-right:6px}
+  .v3 .t-desc{font-size:13.5px;color:#777;margin-top:3px}
+  .v3 .t-stat{font-size:12px;color:#999;white-space:nowrap;font-family:ui-monospace,Menlo,monospace}
+  .v3-head .disc{width:200px;height:200px;border-radius:50%;object-fit:cover}
+  .v3-head{position:relative;display:inline-block}
+  .v3-name{font-family:"Snell Roundhand",cursive;font-size:64px;margin-top:-20px}
+  .v3-sub{font-size:13.5px;color:#666;letter-spacing:2px;text-transform:uppercase}
+  .v3-note{text-align:center;margin-top:34px;font-size:13px;color:#999}
+
+  .switcher{position:fixed;bottom:20px;left:50%;transform:translateX(-50%);
+    background:#fff;border:1.5px solid #111;border-radius:999px;padding:10px;display:flex;gap:8px;z-index:10;
+    box-shadow:8px 8px 0 #d9f0f9;max-width:94vw;flex-wrap:wrap;justify-content:center}
+  .switcher button{background:transparent;color:#555;border:1px solid transparent;border-radius:999px;padding:8px 16px;cursor:pointer;font-size:13px;font-family:inherit}
+  .switcher button:hover{color:#111;border-color:#d7ecf5}
+  .switcher button.active{background:#111;color:#aee3f7}
+  .statebar{position:fixed;bottom:76px;left:50%;transform:translateX(-50%);
+    background:#fff;border:1px solid #111;border-radius:999px;padding:6px 14px;font-size:12px;color:#555;z-index:10;white-space:nowrap}
+  .statebar b{color:#2ea3d6}
+  .variant{display:none}
+  .variant.show{display:block;animation:fade .3s ease}
+  @keyframes fade{from{opacity:0}to{opacity:1}}
+</style>
+</head>
+<body>
+<div class="proto-tag">PROTOTYPE v4</div>
+<img class="spark" style="display:none" src="rolex-photo.png" alt="">
+<!-- 星芒 SVG symbol -->
+<svg width="0" height="0" style="position:absolute">
+  <defs>
+    <!-- 四角星芒：浅蓝填充 + 细黑描边，模拟参考图 -->
+    <symbol id="spark4" viewBox="0 0 200 200">
+      <path d="M100 0 C105 55 115 85 200 100 C115 115 105 145 100 200 C95 145 85 115 0 100 C85 85 95 55 100 0 Z"
+        fill="#e3f4fb" stroke="#111" stroke-width="0.6" opacity="0.95"/>
+      <path d="M100 8 C104 58 112 88 192 100 C112 112 104 142 100 192 C96 142 88 112 8 100 C88 88 96 58 100 8 Z"
+        fill="#d2ecf8" opacity="0.6"/>
+    </symbol>
+    <symbol id="spark6" viewBox="0 0 200 200">
+      <g transform="rotate(30 100 100)">
+        <path d="M100 0 C105 55 115 85 200 100 C115 115 105 145 100 200 C95 145 85 115 0 100 C85 85 95 55 100 0 Z"
+          fill="#e3f4fb" stroke="#111" stroke-width="0.5"/>
+      </g>
+      <g transform="rotate(-30 100 100)">
+        <path d="M100 0 C105 55 115 85 200 100 C115 115 105 145 100 200 C95 145 85 115 0 100 C85 85 95 55 100 0 Z"
+          fill="#eaf7fd" stroke="#111" stroke-width="0.5"/>
+      </g>
+    </symbol>
+  </defs>
+</svg>
+
+<div class="wrap">
+
+  <!-- ================= V1：全幅拼贴 ================= -->
+  <section class="variant" id="v1" data-label="V1 · 全幅拼贴 hero">
+    <div class="v1-hero">
+      <!-- 散布的星芒与几何（GitHub 上将以一张合成 SVG 呈现） -->
+      <svg class="spark" style="top:-10px;left:-90px;width:300px" viewBox="0 0 200 200"><use href="#spark4"/></svg>
+      <svg class="spark" style="top:40px;right:-70px;width:220px" viewBox="0 0 200 200"><use href="#spark4"/></svg>
+      <svg class="spark" style="bottom:60px;left:2%;width:150px" viewBox="0 0 200 200"><use href="#spark6"/></svg>
+      <svg class="spark" style="bottom:-30px;right:8%;width:260px" viewBox="0 0 200 200"><use href="#spark4"/></svg>
+      <div class="spark" style="top:120px;left:16%;width:20px;height:20px;background:#111;border-radius:50%"></div>
+      <div class="spark" style="top:150px;right:20%;width:46px;height:46px;background:#111;border-radius:50%"></div>
+      <div class="spark" style="bottom:120px;right:26%;width:24px;height:24px;background:#111;border-radius:50%"></div>
+      <div class="spark" style="top:170px;left:22%;width:14px;height:14px;border:2px solid #111;border-radius:50%;background:#fff"></div>
+      <svg class="spark sparkline" style="top:90px;left:0;width:100%;height:2px" preserveAspectRatio="none"><line x1="0" y1="1" x2="1200" y2="60" stroke="#111" stroke-width="1.2"/></svg>
+
+      <div class="v1-orbit">
+        <img class="disc" src="rolex-photo.png" alt="Rolex">
+      </div>
+      <div class="v1-name">Role<span>X</span></div>
+      <div class="v1-sub">building agentic AI · reasoning systems · multimodal workflows</div>
+    </div>
+
+    <div class="v1-body">
+      <h3>Selected Work</h3>
+      <div class="work"><b>ai-video-pipeline</b><p>生产环境在跑的 AI 短视频流水线：control-plane + workers + Web 前端</p><span>516 commits</span></div>
+      <div class="work"><b>Research-OS</b><p>provider-neutral 科研 agent 系统：skills · typed artifacts · 确定性 CLI</p><span>226 commits</span></div>
+      <div class="work"><b>periscope</b><p>给纯文本 coding agent 的视觉桥 — 把图片译成 agent 可读的世界</p><span>GPL-3.0</span></div>
+      <div class="work"><b>PostHub</b><p>一个视频，一键分发抖音 / 小红书 / 视频号</p><span>124 commits</span></div>
+      <div class="work"><b>tuxevil-rotator</b><p>multi-provider AI proxy rotator，已发布 npm</p><span>npm</span></div>
+
+      <h3>About</h3>
+      <div class="work"><b>SYSU</b><p>CS Master '29 · Rank 1/68</p><span>🎓</span></div>
+      <div class="work"><b>@toRolex</b><p>旧号被错误封禁，申诉中 — 这里是我的新家，作品照常营业</p><span>✉️</span></div>
+
+      <div class="v1-foot">
+        <a href="mailto:torolex@163.com">torolex@163.com</a> · 抖音 · 小红书
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= V2：杂志卡 ================= -->
+  <section class="variant" id="v2" data-label="V2 · 星芒杂志卡">
+    <div class="v2" style="padding-top:80px">
+      <div class="v2-card">
+        <svg class="corner-spark" viewBox="0 0 200 200"><use href="#spark4"/></svg>
+        <div class="corner-dot"></div>
+        <div class="v2-kicker"><span>CallMeRol · formerly @toRolex (appeal in progress)</span><span>est. 2026</span></div>
+        <div class="v2-title">
+          I make <span class="circle-wrap"><img src="rolex-photo.png" alt="rolex"></span> agents<br>
+          that <span class="hand">actually ship.</span>
+        </div>
+        <p class="v2-lede">数学训练出身，做 production-grade AI engineering：科研 agent 系统、coding-agent 工具、跑在生产上的内容流水线。SYSU CS Master '29 · Rank 1/68.</p>
+        <ul class="v2-list">
+          <li><span class="no">01</span><b>ai-video-pipeline</b><span>AI 短视频生产系统 · 生产环境 · 516 commits</span></li>
+          <li><span class="no">02</span><b>Research-OS</b><span>provider-neutral 科研 agent 系统 · 226 commits</span></li>
+          <li><span class="no">03</span><b>periscope</b><span>coding agent 的视觉桥 · GPL-3.0 开源</span></li>
+          <li><span class="no">04</span><b>PostHub / tuxevil-rotator</b><span>发布中枢 · npm 基础设施</span></li>
+        </ul>
+        <div class="v2-sig">
+          <span>Python · TypeScript · React — 抖音 / 小红书</span>
+          <span class="name">Rolex</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= V3：歌单封面风 ================= -->
+  <section class="variant" id="v3" data-label="V3 · Disco 单曲列表">
+    <div class="v3">
+      <svg class="spark" style="top:10px;left:-40px;width:180px" viewBox="0 0 200 200"><use href="#spark6"/></svg>
+      <svg class="spark" style="top:20px;right:-30px;width:150px" viewBox="0 0 200 200"><use href="#spark4"/></svg>
+      <div class="spark" style="top:280px;left:8%;width:30px;height:30px;background:#111;border-radius:50%"></div>
+      <div class="spark" style="top:320px;right:10%;width:16px;height:16px;border:2px solid #111;border-radius:50%;background:#fff"></div>
+
+      <div class="v3-head"><img class="disc" src="rolex-photo.png" alt="Rolex"></div>
+      <div class="v3-name">Rolex</div>
+      <div class="v3-sub">agentic ai · reasoning · multimodal — selected works, played in production</div>
+
+      <div class="track">
+        <img class="disc-s" src="rolex-photo.png" alt="">
+        <div class="t-info"><div class="t-name"><em>◆</em>ai-video-pipeline</div><div class="t-desc">control-plane + workers 的 AI 短视频流水线，生产环境在跑</div></div>
+        <div class="t-stat">516 commits · prod</div>
+      </div>
+      <div class="track">
+        <img class="disc-s" src="rolex-photo.png" alt="">
+        <div class="t-info"><div class="t-name"><em>◆</em>Research-OS</div><div class="t-desc">provider-neutral 科研 agent 系统：skills · typed artifacts · CLI</div></div>
+        <div class="t-stat">226 commits</div>
+      </div>
+      <div class="track">
+        <img class="disc-s" src="rolex-photo.png" alt="">
+        <div class="t-info"><div class="t-name"><em>◆</em>periscope</div><div class="t-desc">给纯文本 coding agent 的视觉桥（GPL-3.0）</div></div>
+        <div class="t-stat">open source</div>
+      </div>
+      <div class="track">
+        <img class="disc-s" src="rolex-photo.png" alt="">
+        <div class="t-info"><div class="t-name"><em>◆</em>PostHub</div><div class="t-desc">一个视频，一键分发抖音 / 小红书 / 视频号</div></div>
+        <div class="t-stat">124 commits</div>
+      </div>
+      <div class="track">
+        <img class="disc-s" src="rolex-photo.png" alt="">
+        <div class="t-info"><div class="t-name"><em>◆</em>tuxevil-rotator</div><div class="t-desc">multi-provider AI proxy rotator，已发布 npm</div></div>
+        <div class="t-stat">on npm</div>
+      </div>
+
+      <div class="v3-note">
+        SYSU CS Master '29 · Rank 1/68 — 旧号 @toRolex 误封申诉中，作品照常营业<br>
+        📮 <a href="mailto:torolex@163.com" style="color:#111;border-bottom:1px solid #aee3f7">torolex@163.com</a>
+      </div>
+    </div>
+  </section>
+
+</div>
+
+<div class="statebar" id="statebar">state: <b id="statevar">—</b> · 3 variants · ROLEX 星芒拼贴美学</div>
+<nav class="switcher" id="switcher"></nav>
+
+<script>
+  const variants=[...document.querySelectorAll('.variant')];
+  const nav=document.getElementById('switcher');
+  variants.forEach((v,i)=>{const b=document.createElement('button');b.textContent=v.dataset.label;b.onclick=()=>select(i);nav.appendChild(b)});
+  function select(i){variants.forEach((v,j)=>v.classList.toggle('show',i===j));
+    [...nav.children].forEach((b,j)=>b.classList.toggle('active',i===j));
+    document.getElementById('statevar').textContent=variants[i].dataset.label;
+    location.hash='v'+String.fromCharCode(65+i);}
+  const m=location.hash.match(/^#v([ABC])$/);select(m?'ABC'.indexOf(m[1]):0);
+</script>
+</body>
+</html>

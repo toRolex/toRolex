@@ -2,6 +2,15 @@
   <img width="100%" src="assets/rolex-card-embed.svg" alt="Rolex — I make agents that actually ship. · github.com/toRolex" />
 </div>
 
+<div align="center">
+
+<a href="https://github.com/toRolex"><img src="https://komarev.com/ghpvc/?username=toRolex&color=CEE8EE&style=flat-square&label=Profile+Views" alt="Profile Views" /></a>
+&nbsp;
+<img src="https://img.shields.io/github/stars/toRolex?color=CEE8EE&style=flat-square&label=Stars" alt="Stars" />
+<img src="https://img.shields.io/badge/dynamic/json?color=CEE8EE&style=flat-square&label=Repos&query=%24.public_repos&url=https%3A%2F%2Fapi.github.com%2Fusers%2FtoRolex" alt="Public Repos" />
+
+</div>
+
 ---
 
 ## Featured Work

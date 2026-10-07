@@ -19,6 +19,7 @@
 
 - **[nicobailon/pi-subagents](https://github.com/nicobailon/pi-subagents)** — Pi extension for async subagent delegation
 - **[coulsontl/ai-toolbox](https://github.com/coulsontl/ai-toolbox)** — Personal AI Toolbox
+- **[AltanS/collie](https://github.com/AltanS/collie)** — Self-hosted PWA to drive Claude Code, Pi, Codex and OpenCode from your phone
 
 ---
 
